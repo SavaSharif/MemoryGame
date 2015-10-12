@@ -42,20 +42,8 @@ public class Main extends javax.swing.JFrame {
         }
         SetBackground(twodArray);
         
-/*
-        Color[] colorArray1 = new Color[]{Color.BLUE, Color.CYAN, Color.ORANGE, Color.MAGENTA, Color.yellow, Color.GREEN, Color.RED, Color.PINK};
-        int ArraySize = colorArray1.length;
+  
 
-        Color[] colorArray2 = new Color[ArraySize];
-
-        for (int i = 0; i < colorArray1.length; i++) {
-            colorArray2[i] = colorArray1[i];
-        }
-
-        ShuffleArray1(colorArray1);
-        ShuffleArray2(colorArray2);
-        
-*/
     }
 
     /**
@@ -665,78 +653,10 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JPanel Kleurtjes9;
     // End of variables declaration//GEN-END:variables
 
-    private void ShuffleArray1(Color[] colorArray1) {
-        Random random = new Random();
-        for (int i = colorArray1.length - 1; i > 0; i--) {
-            int index = random.nextInt(i + 1);
-            //swap
-            Color temp = colorArray1[index];
-            colorArray1[index] = colorArray1[i];
-            colorArray1[i] = temp;
-        }
-        /*
-         for(int j = 0; j < colorArray1.length; j++){
-         System.out.println(colorArray1[j]);
-         }*/
 
-    }
+ 
 
-    private void ShuffleArray2(Color[] colorArray2) {
-        Random random = new Random();
-        for (int i = colorArray2.length - 1; i > 0; i--) {
-            int index = random.nextInt(i + 1);
-            //swap
-            Color temp = colorArray2[index];
-            colorArray2[index] = colorArray2[i];
-            colorArray2[i] = temp;
-        }
-        /*
-         for(int j = 0; j < colorArray2.length; j++){
-         System.out.println(colorArray2[j]);
-         }*/
-    }
-
-    private void SetBackground(Color[] colorArray1, Color[] colorArray2) {
-
-        Kleurtjes1.setBackground(colorArray1[0]);
-        Kleurtjes2.setBackground(colorArray1[1]);
-        Kleurtjes3.setBackground(colorArray1[2]);
-        Kleurtjes4.setBackground(colorArray1[3]);
-        Kleurtjes5.setBackground(colorArray1[4]);
-        Kleurtjes6.setBackground(colorArray1[5]);
-        Kleurtjes7.setBackground(colorArray1[6]);
-        Kleurtjes8.setBackground(colorArray1[7]);
-
-        Kleurtjes9.setBackground(colorArray2[0]);
-        Kleurtjes10.setBackground(colorArray2[1]);
-        Kleurtjes11.setBackground(colorArray2[2]);
-        Kleurtjes12.setBackground(colorArray2[3]);
-        Kleurtjes13.setBackground(colorArray2[4]);
-        Kleurtjes14.setBackground(colorArray2[5]);
-        Kleurtjes15.setBackground(colorArray2[6]);
-        Kleurtjes16.setBackground(colorArray2[7]);
-
-        {
-            if (Kleurtjes1.getBackground() == Kleurtjes9.getBackground()) {
-                System.out.println("Goed1!");
-
-            } else {
-
-                if (Kleurtjes1.getBackground() == Kleurtjes10.getBackground()) {
-                    System.out.println("Goed2!");
-
-                } else {
-
-                    if (Kleurtjes1.getBackground() == Kleurtjes11.getBackground()) {
-                        System.out.println("Goed3!");
-
-                    }
-
-                }
-
-            }
-        }
-    }
+    
 
     private void ShuffelArray(Color[] colorArray) {
         Random random = new Random();
