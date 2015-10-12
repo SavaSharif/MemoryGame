@@ -21,7 +21,28 @@ public class Main extends javax.swing.JFrame {
 
         initComponents();
         Random random = new Random();
-
+        
+        Color[] colorArray = new Color[]{Color.BLUE, Color.BLUE, Color.CYAN, Color.CYAN, Color.MAGENTA, Color.MAGENTA, Color.ORANGE, Color.ORANGE, Color.PINK, Color.PINK, Color.YELLOW, Color.YELLOW, Color.RED, Color.RED, Color.GREEN, Color.GREEN};
+        int arraygrootte = colorArray.length / 4;
+        
+        Color[][] twodArray = new Color[arraygrootte][arraygrootte];
+        ShuffelArray(colorArray);
+        CopyArray(colorArray, twodArray, arraygrootte);
+        
+        for(int i= 0; i < colorArray.length; i++){
+            System.out.println("colorArray" + colorArray[i]);
+        }
+        System.out.println("\n\n\n");
+        
+         for(int i = 0; i < arraygrootte; i++ ){
+            for(int j = 0; j < arraygrootte; j++){
+                System.out.println("2darray" + twodArray[i][j]);
+                                
+            }
+        }
+        SetBackground(twodArray);
+        
+/*
         Color[] colorArray1 = new Color[]{Color.BLUE, Color.CYAN, Color.ORANGE, Color.MAGENTA, Color.yellow, Color.GREEN, Color.RED, Color.PINK};
         int ArraySize = colorArray1.length;
 
@@ -33,8 +54,8 @@ public class Main extends javax.swing.JFrame {
 
         ShuffleArray1(colorArray1);
         ShuffleArray2(colorArray2);
-        SetBackground(colorArray1, colorArray2);
-
+        
+*/
     }
 
     /**
@@ -716,4 +737,48 @@ public class Main extends javax.swing.JFrame {
             }
         }
     }
+
+    private void ShuffelArray(Color[] colorArray) {
+        Random random = new Random();
+        for (int i = colorArray.length - 1; i > 0; i--) {
+            int index = random.nextInt(i + 1);
+            //swap
+            Color temp = colorArray[index];
+            colorArray[index] = colorArray[i];
+            colorArray[i] = temp;
+        }
+    }
+
+    private void CopyArray(Color[] colorArray, Color[][] twodArray, int arraygrootte) {
+        int k = 0;
+        for(int i = 0; i < arraygrootte; i++ ){
+            for(int j = 0; j < arraygrootte; j++){
+                twodArray[i][j] = colorArray[k];
+                k++;
+                
+            }
+        }
+    }
+
+    private void SetBackground(Color[][] twodArray) {
+        Kleurtjes1.setBackground(twodArray[0][0]);
+        Kleurtjes2.setBackground(twodArray[0][1]);
+        Kleurtjes3.setBackground(twodArray[0][2]);
+        Kleurtjes4.setBackground(twodArray[0][3]);
+        Kleurtjes5.setBackground(twodArray[1][0]);
+        Kleurtjes6.setBackground(twodArray[1][1]);
+        Kleurtjes7.setBackground(twodArray[1][2]);
+        Kleurtjes8.setBackground(twodArray[1][3]);
+
+        Kleurtjes9.setBackground(twodArray[2][0]);
+        Kleurtjes10.setBackground(twodArray[2][1]);
+        Kleurtjes11.setBackground(twodArray[2][2]);
+        Kleurtjes12.setBackground(twodArray[2][3]);
+        Kleurtjes13.setBackground(twodArray[3][0]);
+        Kleurtjes14.setBackground(twodArray[3][1]);
+        Kleurtjes15.setBackground(twodArray[3][2]);
+        Kleurtjes16.setBackground(twodArray[3][3]);
+    }
+
+  
 }
