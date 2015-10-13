@@ -5,8 +5,10 @@
  */
 package memorygame;
 
+import java.awt.Button;
 import java.awt.Color;
 import java.util.Random;
+import javax.swing.JButton;
 
 /**
  *
@@ -17,11 +19,16 @@ public class Main extends javax.swing.JFrame {
     /**
      * Creates new form Main
      */
+    
+    final Color[] ColorClicked = new Color[2];
+    final int[] PlaceColor = new int[2];
+    final JButton[] ButtonClicked = new JButton[2];
+    int timesclicked = 0;
     public Main() {
 
         initComponents();
         Random random = new Random();
-        
+             
         Color[] colorArray = new Color[]{Color.BLUE, Color.BLUE, Color.CYAN, Color.CYAN, Color.MAGENTA, Color.MAGENTA, Color.ORANGE, Color.ORANGE, Color.PINK, Color.PINK, Color.YELLOW, Color.YELLOW, Color.RED, Color.RED, Color.GREEN, Color.GREEN};
         int arraygrootte = colorArray.length / 4;
         
@@ -41,6 +48,14 @@ public class Main extends javax.swing.JFrame {
             }
         }
         SetBackground(twodArray);
+       
+                //resetbuttons
+       
+                
+            
+            
+            
+        
         
   
 
@@ -472,24 +487,26 @@ public class Main extends javax.swing.JFrame {
         // TODO add your handling code here:
         Button3.setContentAreaFilled(false);
         Button3.setBorderPainted(false);
-
-         {if (Button4 != Button3);
+        copyinfo(Button3);
+        
+        /*
+         if (Button4 != Button3);
        Button4.setContentAreaFilled(true);
         Button4.setBorderPainted(true);
-         }
+        */
     }//GEN-LAST:event_Button3ActionPerformed
 
     private void Button4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Button4ActionPerformed
         // TODO add your handling code here:
         Button4.setContentAreaFilled(false);
         Button4.setBorderPainted(false);
-        
-        {if (Button4 != Button3);
+        /*
+        if (Button4 != Button3){
        Button3.setContentAreaFilled(true);
         Button3.setBorderPainted(true);
-   
+        }
     }//GEN-LAST:event_Button4ActionPerformed
-    }
+   */ }
     private void Button5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Button5ActionPerformed
         // TODO add your handling code here:
         Button5.setContentAreaFilled(false);
@@ -518,10 +535,11 @@ public class Main extends javax.swing.JFrame {
         // TODO add your handling code here:Button3.setContentAreaFilled(false);
         Button9.setContentAreaFilled(false);
         Button9.setBorderPainted(false);
-        
+        /*
         {if (Button1.getBackground () != Button9.getBackground());
        Button1.setContentAreaFilled(true);
         Button1.setBorderPainted(true);}
+        */
     }//GEN-LAST:event_Button9ActionPerformed
 
     private void Button10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Button10ActionPerformed
@@ -698,6 +716,23 @@ public class Main extends javax.swing.JFrame {
         Kleurtjes14.setBackground(twodArray[3][1]);
         Kleurtjes15.setBackground(twodArray[3][2]);
         Kleurtjes16.setBackground(twodArray[3][3]);
+    }
+
+    private void copyinfo(JButton Button) {
+        //plek en kleur in array zetten
+       if(timesclicked == 0){
+           ButtonClicked[0] = Button;
+           
+           timesclicked++;
+       }
+       
+       if(timesclicked == 1){
+           ButtonClicked[1] = Button;
+           timesclicked++;
+       }
+       
+               
+        System.out.println("Button" + Button);
     }
 
   
