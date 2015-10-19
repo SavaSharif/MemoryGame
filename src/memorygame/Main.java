@@ -7,6 +7,7 @@ package memorygame;
 
 import java.awt.Button;
 import java.awt.Color;
+import java.util.Arrays;
 import java.util.Random;
 import javax.swing.JButton;
 
@@ -21,18 +22,21 @@ public class Main extends javax.swing.JFrame {
      */
     
     final Color[] ColorClicked = new Color[2];
-    final int[] PlaceColor = new int[2];
-    final JButton[] ButtonClicked = new JButton[2];
+    final JButton[] ButtonArray = new JButton[2];
+    final Color[] colorArray = new Color[]{Color.BLUE, Color.BLUE, Color.CYAN, Color.CYAN, Color.MAGENTA, Color.MAGENTA, Color.ORANGE, Color.ORANGE, Color.PINK, Color.PINK, Color.YELLOW, Color.YELLOW, Color.RED, Color.RED, Color.GREEN, Color.GREEN};
     int timesclicked = 0;
+    int arraygrootte = colorArray.length / 4;
+    final Color[][] twodArray = new Color[arraygrootte][arraygrootte];
+        
+    
     public Main() {
 
         initComponents();
         Random random = new Random();
              
-        Color[] colorArray = new Color[]{Color.BLUE, Color.BLUE, Color.CYAN, Color.CYAN, Color.MAGENTA, Color.MAGENTA, Color.ORANGE, Color.ORANGE, Color.PINK, Color.PINK, Color.YELLOW, Color.YELLOW, Color.RED, Color.RED, Color.GREEN, Color.GREEN};
-        int arraygrootte = colorArray.length / 4;
         
-        Color[][] twodArray = new Color[arraygrootte][arraygrootte];
+        
+        
         ShuffelArray(colorArray);
         CopyArray(colorArray, twodArray, arraygrootte);
         
@@ -51,9 +55,7 @@ public class Main extends javax.swing.JFrame {
        
                 //resetbuttons
        
-                
-            
-            
+      
             
         
         
@@ -487,8 +489,19 @@ public class Main extends javax.swing.JFrame {
         // TODO add your handling code here:
         Button3.setContentAreaFilled(false);
         Button3.setBorderPainted(false);
-        copyinfo(Button3);
-        
+         if(timesclicked == 0){
+            ColorClicked[0] = twodArray[0][2];
+            ButtonArray[0] = Button3;
+            
+        }
+        if(timesclicked == 1){
+            ColorClicked[1] = twodArray[0][2];
+            timesclicked = 0;
+            ButtonArray[1] = Button3;
+             
+            CheckIfSame();
+        }
+        timesclicked++;
         /*
          if (Button4 != Button3);
        Button4.setContentAreaFilled(true);
@@ -500,7 +513,19 @@ public class Main extends javax.swing.JFrame {
         // TODO add your handling code here:
         Button4.setContentAreaFilled(false);
         Button4.setBorderPainted(false);
-        /*
+        
+        if(timesclicked == 0){
+            ColorClicked[0] = twodArray[0][3];
+            ButtonArray[0] = Button4;
+        }
+        if(timesclicked == 1){
+            ColorClicked[1] = twodArray[0][3];
+            timesclicked = 0;
+            ButtonArray[1] = Button4;
+            CheckIfSame();
+        }
+        timesclicked++;
+        /*1
         if (Button4 != Button3){
        Button3.setContentAreaFilled(true);
         Button3.setBorderPainted(true);
@@ -718,22 +743,26 @@ public class Main extends javax.swing.JFrame {
         Kleurtjes16.setBackground(twodArray[3][3]);
     }
 
-    private void copyinfo(JButton Button) {
-        //plek en kleur in array zetten
-       if(timesclicked == 0){
-           ButtonClicked[0] = Button;
+    private void CheckIfSame() {
+        if(ColorClicked[0] == ColorClicked[1]){
+            System.out.println("Zelfde kleur");
+            
+            
+        }
+        else{
+            
+            
+            
+            
+            System.out.println("niet dezelfde kleur");
            
-           timesclicked++;
-       }
-       
-       if(timesclicked == 1){
-           ButtonClicked[1] = Button;
-           timesclicked++;
-       }
-       
-               
-        System.out.println("Button" + Button);
+            ButtonArray[0].setContentAreaFilled(true);
+            ButtonArray[0].setBorderPainted(true); 
+            ButtonArray[1].setContentAreaFilled(true);
+            ButtonArray[1].setBorderPainted(true); 
+            
+        }
+        
     }
 
-  
 }
