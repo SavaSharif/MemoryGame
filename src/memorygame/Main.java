@@ -5,7 +5,6 @@
  */
 package memorygame;
 
-import java.awt.Button;
 import java.awt.Color;
 import java.util.Arrays;
 import java.util.Random;
@@ -36,18 +35,6 @@ public class Main extends javax.swing.JFrame {
          txt_TimesClicked.setText("0");
         ShuffelArray(colorArray);
         CopyArray(colorArray, twodArray, arraygrootte);
-        /*
-        for(int i= 0; i < colorArray.length; i++){
-            System.out.println("colorArray" + colorArray[i]);
-        }
-        System.out.println("\n\n\n");
-        
-         for(int i = 0; i < arraygrootte; i++ ){
-            for(int j = 0; j < arraygrootte; j++){
-                System.out.println("2darray" + twodArray[i][j]);
-                                
-            }
-        }*/
         SetBackground(twodArray);
        
         
@@ -924,14 +911,12 @@ public class Main extends javax.swing.JFrame {
             
                         
             System.out.println("niet dezelfde kleur");
-            //System.out.println("" + ButtonArray[0] + "\n" + ButtonArray[1]);
             ButtonArray[0].setContentAreaFilled(true);
             ButtonArray[0].setBorderPainted(true); 
             ButtonArray[1].setContentAreaFilled(true);
             ButtonArray[1].setBorderPainted(true); 
             Arrays.fill(ButtonArray, null);
             Arrays.fill(ColorClicked, null);
-            System.out.println("einde checkifsame" + timesclicked);
             timesclicked++;
             
         }
