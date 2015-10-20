@@ -24,7 +24,7 @@ public class Main extends javax.swing.JFrame {
     final Color[] ColorClicked = new Color[2];
     final JButton[] ButtonArray = new JButton[2];
     final Color[] colorArray = new Color[]{Color.BLUE, Color.BLUE, Color.CYAN, Color.CYAN, Color.MAGENTA, Color.MAGENTA, Color.ORANGE, Color.ORANGE, Color.PINK, Color.PINK, Color.YELLOW, Color.YELLOW, Color.RED, Color.RED, Color.GREEN, Color.GREEN};
-    int timesclicked = 0;
+    int timesclicked = 1;
     int arraygrootte = colorArray.length / 4;
     final Color[][] twodArray = new Color[arraygrootte][arraygrootte];
         
@@ -33,13 +33,10 @@ public class Main extends javax.swing.JFrame {
 
         initComponents();
         Random random = new Random();
-             
-        
-        
-        
+         txt_TimesClicked.setText("0");
         ShuffelArray(colorArray);
         CopyArray(colorArray, twodArray, arraygrootte);
-        
+        /*
         for(int i= 0; i < colorArray.length; i++){
             System.out.println("colorArray" + colorArray[i]);
         }
@@ -50,10 +47,10 @@ public class Main extends javax.swing.JFrame {
                 System.out.println("2darray" + twodArray[i][j]);
                                 
             }
-        }
+        }*/
         SetBackground(twodArray);
        
-                //resetbuttons
+        
        
       
             
@@ -104,6 +101,8 @@ public class Main extends javax.swing.JFrame {
         Button15 = new javax.swing.JButton();
         Kleurtjes16 = new javax.swing.JPanel();
         Button16 = new javax.swing.JButton();
+        txt_TimesClicked = new javax.swing.JTextField();
+        label1 = new java.awt.Label();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -411,6 +410,10 @@ public class Main extends javax.swing.JFrame {
             .addComponent(Button16, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
         );
 
+        txt_TimesClicked.setText("txt_TimesClicked");
+
+        label1.setText("Times Clicked");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -418,6 +421,28 @@ public class Main extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(Kleurtjes5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(Kleurtjes6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(Kleurtjes7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(Kleurtjes8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(Kleurtjes9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(Kleurtjes10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(Kleurtjes11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(Kleurtjes12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(label1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txt_TimesClicked, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(Kleurtjes1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -427,22 +452,6 @@ public class Main extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(Kleurtjes4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(Kleurtjes5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Kleurtjes6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Kleurtjes7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Kleurtjes8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(Kleurtjes9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Kleurtjes10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Kleurtjes11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Kleurtjes12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
                         .addComponent(Kleurtjes13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(Kleurtjes14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -450,7 +459,7 @@ public class Main extends javax.swing.JFrame {
                         .addComponent(Kleurtjes15, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(Kleurtjes16, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(22, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -461,18 +470,25 @@ public class Main extends javax.swing.JFrame {
                     .addComponent(Kleurtjes3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Kleurtjes2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Kleurtjes1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(Kleurtjes5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Kleurtjes6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Kleurtjes7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Kleurtjes8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(Kleurtjes9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Kleurtjes10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Kleurtjes11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Kleurtjes12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(Kleurtjes5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Kleurtjes6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Kleurtjes7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Kleurtjes8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(Kleurtjes9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Kleurtjes10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Kleurtjes11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Kleurtjes12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(99, 99, 99)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(label1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txt_TimesClicked, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(Kleurtjes13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -489,141 +505,289 @@ public class Main extends javax.swing.JFrame {
         // TODO add your handling code here:
         Button3.setContentAreaFilled(false);
         Button3.setBorderPainted(false);
-         if(timesclicked == 0){
-            ColorClicked[0] = twodArray[0][2];
-            ButtonArray[0] = Button3;
-            
-        }
-        if(timesclicked == 1){
+          if(timesclicked % 2 == 0){
             ColorClicked[1] = twodArray[0][2];
-            timesclicked = 0;
             ButtonArray[1] = Button3;
-             
             CheckIfSame();
         }
-        timesclicked++;
-        /*
-         if (Button4 != Button3);
-       Button4.setContentAreaFilled(true);
-        Button4.setBorderPainted(true);
-        */
+         else{
+            ColorClicked[0] = twodArray[0][2];
+            ButtonArray[0] = Button3;
+            timesclicked++;
+        }
+        
+    txt_TimesClicked.setText(Integer.toString(timesclicked - 1));
     }//GEN-LAST:event_Button3ActionPerformed
 
     private void Button4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Button4ActionPerformed
         // TODO add your handling code here:
         Button4.setContentAreaFilled(false);
         Button4.setBorderPainted(false);
-        
-        if(timesclicked == 0){
-            ColorClicked[0] = twodArray[0][3];
-            ButtonArray[0] = Button4;
-        }
-        if(timesclicked == 1){
+          if(timesclicked % 2 == 0){
             ColorClicked[1] = twodArray[0][3];
-            timesclicked = 0;
             ButtonArray[1] = Button4;
             CheckIfSame();
         }
-        timesclicked++;
-        /*1
-        if (Button4 != Button3){
-       Button3.setContentAreaFilled(true);
-        Button3.setBorderPainted(true);
+         else{
+            ColorClicked[0] = twodArray[0][3];
+            ButtonArray[0] = Button4;
+            timesclicked++;
         }
+        
+      txt_TimesClicked.setText(Integer.toString(timesclicked - 1));     
     }//GEN-LAST:event_Button4ActionPerformed
-   */ }
+   
     private void Button5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Button5ActionPerformed
         // TODO add your handling code here:
         Button5.setContentAreaFilled(false);
         Button5.setBorderPainted(false);
+          if(timesclicked % 2 == 0){
+            ColorClicked[1] = twodArray[1][0];
+            ButtonArray[1] = Button5;
+            CheckIfSame();
+        }
+         else{
+            ColorClicked[0] = twodArray[1][0];
+            ButtonArray[0] = Button5;
+            timesclicked++;
+        }
+        
+      txt_TimesClicked.setText(Integer.toString(timesclicked - 1)); 
     }//GEN-LAST:event_Button5ActionPerformed
 
     private void Button6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Button6ActionPerformed
         // TODO add your handling code here:
         Button6.setContentAreaFilled(false);
         Button6.setBorderPainted(false);
+         if(timesclicked % 2 == 0){
+            ColorClicked[1] = twodArray[1][1];
+            ButtonArray[1] = Button6;
+            CheckIfSame();
+        }
+         else{
+            ColorClicked[0] = twodArray[1][1];
+            ButtonArray[0] = Button6;
+            timesclicked++;
+        }
+        
+     txt_TimesClicked.setText(Integer.toString(timesclicked - 1));
     }//GEN-LAST:event_Button6ActionPerformed
 
     private void Button7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Button7ActionPerformed
         // TODO add your handling code here:
         Button7.setContentAreaFilled(false);
         Button7.setBorderPainted(false);
+          if(timesclicked % 2 == 0){
+            ColorClicked[1] = twodArray[1][2];
+            ButtonArray[1] = Button7;
+            CheckIfSame();
+        }
+         else{
+            ColorClicked[0] = twodArray[1][2];
+            ButtonArray[0] = Button7;
+            timesclicked++;
+        }
+        
+     txt_TimesClicked.setText(Integer.toString(timesclicked - 1));   
     }//GEN-LAST:event_Button7ActionPerformed
 
     private void Button8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Button8ActionPerformed
         // TODO add your handling code here:
         Button8.setContentAreaFilled(false);
         Button8.setBorderPainted(false);
+          if(timesclicked % 2 == 0){
+            ColorClicked[1] = twodArray[1][3];
+            ButtonArray[1] = Button8;
+            CheckIfSame();
+        }
+         else{
+            ColorClicked[0] = twodArray[1][3];
+            ButtonArray[0] = Button8;
+            timesclicked++;
+        }
+        
+     txt_TimesClicked.setText(Integer.toString(timesclicked - 1)); 
     }//GEN-LAST:event_Button8ActionPerformed
 
     private void Button9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Button9ActionPerformed
         // TODO add your handling code here:Button3.setContentAreaFilled(false);
         Button9.setContentAreaFilled(false);
         Button9.setBorderPainted(false);
-        /*
-        {if (Button1.getBackground () != Button9.getBackground());
-       Button1.setContentAreaFilled(true);
-        Button1.setBorderPainted(true);}
-        */
+          if(timesclicked % 2 == 0){
+            ColorClicked[1] = twodArray[2][0];
+            ButtonArray[1] = Button9;
+            CheckIfSame();
+        }
+         else{
+            ColorClicked[0] = twodArray[2][0];
+            ButtonArray[0] = Button9;
+            timesclicked++;
+        }
+        
+      
+      txt_TimesClicked.setText(Integer.toString(timesclicked - 1));  
     }//GEN-LAST:event_Button9ActionPerformed
 
     private void Button10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Button10ActionPerformed
         // TODO add your handling code here: 
         Button10.setContentAreaFilled(false);
         Button10.setBorderPainted(false);
+         if(timesclicked % 2 == 0){
+            ColorClicked[1] = twodArray[2][1];
+            ButtonArray[1] = Button10;
+            CheckIfSame();
+        }
+         else{
+            ColorClicked[0] = twodArray[2][1];
+            ButtonArray[0] = Button10;
+            timesclicked++;
+        }
+        
+     txt_TimesClicked.setText(Integer.toString(timesclicked - 1));   
     }//GEN-LAST:event_Button10ActionPerformed
 
     private void Button11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Button11ActionPerformed
         // TODO add your handling code here:
         Button11.setContentAreaFilled(false);
         Button11.setBorderPainted(false);
+         if(timesclicked % 2 == 0){
+            ColorClicked[1] = twodArray[2][2];
+            ButtonArray[1] = Button11;
+            CheckIfSame();
+        }
+         else{
+            ColorClicked[0] = twodArray[2][2];
+            ButtonArray[0] = Button11;
+            timesclicked++;
+        }
+        
+    txt_TimesClicked.setText(Integer.toString(timesclicked - 1));   
     }//GEN-LAST:event_Button11ActionPerformed
 
     private void Button12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Button12ActionPerformed
         // TODO add your handling code here:
         Button12.setContentAreaFilled(false);
         Button12.setBorderPainted(false);
+        if(timesclicked % 2 == 0){
+            ColorClicked[1] = twodArray[2][3];
+            ButtonArray[1] = Button12;
+            CheckIfSame();
+        }
+         else{
+            ColorClicked[0] = twodArray[2][3];
+            ButtonArray[0] = Button12;
+            timesclicked++;
+        }
+        
+     txt_TimesClicked.setText(Integer.toString(timesclicked - 1));   
     }//GEN-LAST:event_Button12ActionPerformed
 
     private void Button13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Button13ActionPerformed
         // TODO add your handling code here:
         Button13.setContentAreaFilled(false);
         Button13.setBorderPainted(false);
+         if(timesclicked % 2 == 0){
+            ColorClicked[1] = twodArray[3][0];
+            ButtonArray[1] = Button13;
+            CheckIfSame();
+        }
+        else{
+            ColorClicked[0] = twodArray[3][0];
+            ButtonArray[0] = Button13;
+            timesclicked++;
+        }
+        
+     txt_TimesClicked.setText(Integer.toString(timesclicked - 1));   
     }//GEN-LAST:event_Button13ActionPerformed
 
     private void Button14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Button14ActionPerformed
         // TODO add your handling code here:
         Button14.setContentAreaFilled(false);
         Button14.setBorderPainted(false);
+         if(timesclicked % 2 == 0){
+            ColorClicked[1] = twodArray[3][1];
+            ButtonArray[1] = Button14;
+            CheckIfSame();
+        }
+        else{
+            ColorClicked[0] = twodArray[3][1];
+            ButtonArray[0] = Button14;
+            timesclicked++;
+        }
+        
+     txt_TimesClicked.setText(Integer.toString(timesclicked - 1));   
     }//GEN-LAST:event_Button14ActionPerformed
 
     private void Button15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Button15ActionPerformed
         // TODO add your handling code here:
         Button15.setContentAreaFilled(false);
         Button15.setBorderPainted(false);
+          if(timesclicked % 2 == 0){
+            ColorClicked[1] = twodArray[3][2];
+            ButtonArray[1] = Button15;
+            CheckIfSame();
+        }
+         else{
+            ColorClicked[0] = twodArray[3][2];
+            ButtonArray[0] = Button15;
+            timesclicked++;
+        }
+        
+     txt_TimesClicked.setText(Integer.toString(timesclicked - 1));   
     }//GEN-LAST:event_Button15ActionPerformed
 
     private void Button2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Button2ActionPerformed
         // TODO add your handling code here:
         Button2.setContentAreaFilled(false);
         Button2.setBorderPainted(false);
+          if(timesclicked % 2 == 0){
+            ColorClicked[1] = twodArray[0][1];
+            ButtonArray[1] = Button2;
+            CheckIfSame();
+        }
+          else{
+            ColorClicked[0] = twodArray[0][1];
+            ButtonArray[0] = Button2;
+            timesclicked++;
+        }
+        
+      txt_TimesClicked.setText(Integer.toString(timesclicked - 1)); 
     }//GEN-LAST:event_Button2ActionPerformed
 
     private void Button1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Button1ActionPerformed
         // TODO add your handling code here:
         Button1.setContentAreaFilled(false);
         Button1.setBorderPainted(false);
-        
-        
-         {if (Button1 != Button9);
-       Button9.setContentAreaFilled(true);
-        Button9.setBorderPainted(true);}
+          if(timesclicked % 2 == 0){
+            ColorClicked[1] = twodArray[0][0];
+            ButtonArray[1] = Button1;
+            CheckIfSame();
+        }
+         else{
+            ColorClicked[0] = twodArray[0][0];
+            ButtonArray[0] = Button1;
+            timesclicked++;
+        }
+        txt_TimesClicked.setText(Integer.toString(timesclicked - 1));
+      
+ 
     }//GEN-LAST:event_Button1ActionPerformed
 
     private void Button16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Button16ActionPerformed
         // TODO add your handling code here:
         Button16.setContentAreaFilled(false);
         Button16.setBorderPainted(false);
+          if(timesclicked % 2 == 0){
+            ColorClicked[1] = twodArray[3][3];
+            ButtonArray[1] = Button16;
+            CheckIfSame();
+        }
+         else{
+            ColorClicked[0] = twodArray[3][3];
+            ButtonArray[0] = Button16;
+            timesclicked++;
+        }
+       txt_TimesClicked.setText(Integer.toString(timesclicked - 1));
     }//GEN-LAST:event_Button16ActionPerformed
 
     /**
@@ -694,6 +858,8 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JPanel Kleurtjes7;
     private javax.swing.JPanel Kleurtjes8;
     private javax.swing.JPanel Kleurtjes9;
+    private java.awt.Label label1;
+    private javax.swing.JTextField txt_TimesClicked;
     // End of variables declaration//GEN-END:variables
 
 
@@ -746,20 +912,27 @@ public class Main extends javax.swing.JFrame {
     private void CheckIfSame() {
         if(ColorClicked[0] == ColorClicked[1]){
             System.out.println("Zelfde kleur");
+            ButtonArray[0].setEnabled(false);
+            ButtonArray[1].setEnabled(false);
+            Arrays.fill(ButtonArray, null);
+            Arrays.fill(ColorClicked, null); 
             
-            
+            timesclicked++;
         }
         else{
             
             
-            
-            
+                        
             System.out.println("niet dezelfde kleur");
-           
+            //System.out.println("" + ButtonArray[0] + "\n" + ButtonArray[1]);
             ButtonArray[0].setContentAreaFilled(true);
             ButtonArray[0].setBorderPainted(true); 
             ButtonArray[1].setContentAreaFilled(true);
             ButtonArray[1].setBorderPainted(true); 
+            Arrays.fill(ButtonArray, null);
+            Arrays.fill(ColorClicked, null);
+            System.out.println("einde checkifsame" + timesclicked);
+            timesclicked++;
             
         }
         
