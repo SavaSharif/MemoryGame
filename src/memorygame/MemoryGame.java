@@ -7,7 +7,7 @@ package memorygame;
 
 /**
  *
- * @author bla
+ * @author Jiri Booij, Sava Sharif
  */
 public class MemoryGame {
 
