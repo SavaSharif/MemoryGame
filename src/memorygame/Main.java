@@ -6,13 +6,19 @@
 package memorygame;
 
 import java.awt.Color;
-import java.awt.event.ActionListener;
 import java.util.Arrays;
 import java.util.Random;
 import javax.swing.JButton;
 import javax.swing.Timer;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
 
 /**
  *
@@ -30,20 +36,53 @@ public class Main extends javax.swing.JFrame {
     int timesclicked = 1;
     int arraygrootte = colorArray.length / 4;
     final Color[][] twodArray = new Color[arraygrootte][arraygrootte];
-    Timer timer;    
+    Timer timer;  
+    Timer timer2;
+    String filename = "F:\\Documents\\GitHub\\MemoryGame\\highscore.txt";
     
     public Main() {
 
         initComponents();
-        Random random = new Random();
+        txt_goed_fout.setText("");
         jLabel1.setText("0");
         ShuffelArray(colorArray);
         CopyArray(colorArray, twodArray, arraygrootte);
         SetBackground(twodArray);
         
+        
+        String line = null;
+        
+        try{
+            //FileReader reads text files in the default encoding.
+            FileReader filereader = new FileReader(filename);
+            
+            //Always wrap FileReader in BufferedReader.
+            BufferedReader bufferedReader = new BufferedReader(filereader);
+            while((line = bufferedReader.readLine()) != null){
+                txt_highscore.setText(line);
+            }
+            
+        }
+        catch(FileNotFoundException ex){
+            System.out.println("Unable to open file '" + filename + "'");     
+        }
+           catch(IOException ex) {
+            System.out.println("Error reading file '" + filename + "'");                  
+            
+        }
+        
+        //timer for GUI bug
         timer = new Timer(500, new ActionListener() {
                 public void actionPerformed(ActionEvent e) {
                     CheckIfSame();
+                    
+                }
+            });
+        //timer to clear txt_goed_fout
+        timer2 = new Timer(1000, new ActionListener() {
+                public void actionPerformed(ActionEvent e) {
+                   txt_goed_fout.setText(""); 
+                   timer2.stop();
                     
                 }
             });
@@ -97,6 +136,9 @@ public class Main extends javax.swing.JFrame {
         Button16 = new javax.swing.JButton();
         label1 = new java.awt.Label();
         jLabel1 = new javax.swing.JLabel();
+        txt_goed_fout = new javax.swing.JTextField();
+        jLabel2 = new javax.swing.JLabel();
+        txt_highscore = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -404,12 +446,18 @@ public class Main extends javax.swing.JFrame {
             .addComponent(Button16, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
         );
 
-        label1.setText("Times Clicked");
+        label1.setText("Times Clicked:");
 
-        jLabel1.setText("jLabel1");
+        jLabel1.setText("Score");
         jLabel1.setMaximumSize(new java.awt.Dimension(83, 20));
         jLabel1.setMinimumSize(new java.awt.Dimension(83, 20));
         jLabel1.setPreferredSize(new java.awt.Dimension(83, 20));
+
+        txt_goed_fout.setText("jTextField1");
+
+        jLabel2.setText("High Score:");
+
+        txt_highscore.setText("highscore");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -453,10 +501,17 @@ public class Main extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(Kleurtjes8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(label1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(31, Short.MAX_VALUE))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txt_goed_fout, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(label1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel2))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(txt_highscore)
+                                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))))
+                .addContainerGap(28, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -482,10 +537,16 @@ public class Main extends javax.swing.JFrame {
                             .addComponent(Kleurtjes11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(Kleurtjes12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(95, 95, 95)
+                        .addGap(22, 22, 22)
+                        .addComponent(txt_goed_fout, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(53, 53, 53)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(label1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(21, 21, 21)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel2)
+                            .addComponent(txt_highscore))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(Kleurtjes13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -857,7 +918,10 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JPanel Kleurtjes8;
     private javax.swing.JPanel Kleurtjes9;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private java.awt.Label label1;
+    private javax.swing.JTextField txt_goed_fout;
+    private javax.swing.JLabel txt_highscore;
     // End of variables declaration//GEN-END:variables
 
 
@@ -909,19 +973,19 @@ public class Main extends javax.swing.JFrame {
 
     private void CheckIfSame() {
         if(ColorClicked[0] == ColorClicked[1]){
-            System.out.println("Zelfde kleur");
+            txt_goed_fout.setText("Zelfde kleur");
             ButtonArray[0].setEnabled(false);
             ButtonArray[1].setEnabled(false);
             Arrays.fill(ButtonArray, null);
             Arrays.fill(ColorClicked, null); 
-            
             timesclicked++;
+            WriteToFile();
         }
         else{
             
             
                         
-            System.out.println("niet dezelfde kleur");
+            txt_goed_fout.setText("niet dezelfde kleur");
             ButtonArray[0].setContentAreaFilled(true);
             ButtonArray[0].setBorderPainted(true); 
             ButtonArray[1].setContentAreaFilled(true);
@@ -933,6 +997,26 @@ public class Main extends javax.swing.JFrame {
             
         }
         timer.stop();
+        timer2.start();
+            
+        
     }
 
+    private void WriteToFile() {
+        try{
+            //Assume default encoding.
+            FileWriter filerwriter = new FileWriter(filename);
+            
+            //Always wrap FileWriter in BufferedWriter.
+            BufferedWriter bufferedwriter = new BufferedWriter(filerwriter);
+            bufferedwriter.write(timesclicked-2);
+            System.out.println(timesclicked-2);
+            
+            //close
+            bufferedwriter.close();
+        }
+         catch(IOException ex) {
+            System.out.println("Error writing to file '" + filename + "'");
+        }
+    }
 }
