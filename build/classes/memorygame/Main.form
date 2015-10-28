@@ -68,15 +68,18 @@
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="txt_goed_fout" min="-2" pref="130" max="-2" attributes="0"/>
-                          <Group type="102" alignment="0" attributes="0">
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="label1" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jLabel2" alignment="0" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="txt_highscore" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+                          <Group type="103" alignment="0" groupAlignment="1" attributes="0">
+                              <Component id="Finish" min="-2" max="-2" attributes="0"/>
+                              <Group type="102" attributes="0">
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="label1" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jLabel2" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="txt_highscore" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+                                  </Group>
                               </Group>
                           </Group>
                       </Group>
@@ -91,49 +94,54 @@
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="1" attributes="0">
-                  <Component id="Kleurtjes4" min="-2" max="-2" attributes="0"/>
-                  <Component id="Kleurtjes3" min="-2" max="-2" attributes="0"/>
-                  <Component id="Kleurtjes2" min="-2" max="-2" attributes="0"/>
-                  <Component id="Kleurtjes1" min="-2" max="-2" attributes="0"/>
-              </Group>
-              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="Finish" min="-2" max="-2" attributes="0"/>
                   <Group type="102" attributes="0">
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="Kleurtjes5" min="-2" max="-2" attributes="0"/>
-                          <Component id="Kleurtjes6" min="-2" max="-2" attributes="0"/>
-                          <Component id="Kleurtjes7" min="-2" max="-2" attributes="0"/>
-                          <Component id="Kleurtjes8" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="1" attributes="0">
-                          <Component id="Kleurtjes9" min="-2" max="-2" attributes="0"/>
-                          <Component id="Kleurtjes10" min="-2" max="-2" attributes="0"/>
-                          <Component id="Kleurtjes11" min="-2" max="-2" attributes="0"/>
-                          <Component id="Kleurtjes12" min="-2" max="-2" attributes="0"/>
+                          <Component id="Kleurtjes4" min="-2" max="-2" attributes="0"/>
+                          <Component id="Kleurtjes3" min="-2" max="-2" attributes="0"/>
+                          <Component id="Kleurtjes2" min="-2" max="-2" attributes="0"/>
+                          <Component id="Kleurtjes1" min="-2" max="-2" attributes="0"/>
                       </Group>
-                  </Group>
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
-                      <Component id="txt_goed_fout" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="53" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="label1" min="-2" max="-2" attributes="0"/>
-                          <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+                          <Group type="102" attributes="0">
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="Kleurtjes5" min="-2" max="-2" attributes="0"/>
+                                  <Component id="Kleurtjes6" min="-2" max="-2" attributes="0"/>
+                                  <Component id="Kleurtjes7" min="-2" max="-2" attributes="0"/>
+                                  <Component id="Kleurtjes8" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="1" attributes="0">
+                                  <Component id="Kleurtjes9" min="-2" max="-2" attributes="0"/>
+                                  <Component id="Kleurtjes10" min="-2" max="-2" attributes="0"/>
+                                  <Component id="Kleurtjes11" min="-2" max="-2" attributes="0"/>
+                                  <Component id="Kleurtjes12" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
+                              <Component id="txt_goed_fout" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="53" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="label1" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="jLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="txt_highscore" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
                       </Group>
-                      <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="txt_highscore" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="Kleurtjes13" min="-2" max="-2" attributes="0"/>
+                          <Component id="Kleurtjes14" min="-2" max="-2" attributes="0"/>
+                          <Component id="Kleurtjes15" min="-2" max="-2" attributes="0"/>
+                          <Component id="Kleurtjes16" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
-              </Group>
-              <EmptySpace max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="Kleurtjes13" min="-2" max="-2" attributes="0"/>
-                  <Component id="Kleurtjes14" min="-2" max="-2" attributes="0"/>
-                  <Component id="Kleurtjes15" min="-2" max="-2" attributes="0"/>
-                  <Component id="Kleurtjes16" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace pref="21" max="32767" attributes="0"/>
           </Group>
@@ -606,6 +614,14 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="highscore"/>
       </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="Finish">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Finish"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="FinishActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>
