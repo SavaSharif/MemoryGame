@@ -52,7 +52,7 @@ public class Main extends javax.swing.JFrame {
         
         
         
-        //read highscore.txt
+        //read the stored highscore
         try{
             //FileReader reads text files in the default encoding.
             FileReader filereader = new FileReader(filename);
@@ -87,7 +87,7 @@ public class Main extends javax.swing.JFrame {
                     
                 }
             });       
-        //launch new JFrame
+        //launch new JFrame FinishedGame.java
         timer3 = new Timer(250, new ActionListener() {
                 public void actionPerformed(ActionEvent e) {
                     FinishedGame finishedgame = new FinishedGame();
@@ -957,6 +957,7 @@ public class Main extends javax.swing.JFrame {
     
 
     private void ShuffelArray(Color[] colorArray) {
+        //shuffle colors
         Random random = new Random();
         for (int i = colorArray.length - 1; i > 0; i--) {
             int index = random.nextInt(i + 1);
@@ -968,6 +969,7 @@ public class Main extends javax.swing.JFrame {
     }
 
     private void CopyArray(Color[] colorArray, Color[][] twodArray, int arraygrootte) {
+        //copy the one array into one 2d array
         int k = 0;
         for(int i = 0; i < arraygrootte; i++ ){
             for(int j = 0; j < arraygrootte; j++){
@@ -979,6 +981,7 @@ public class Main extends javax.swing.JFrame {
     }
 
     private void SetBackground(Color[][] twodArray) {
+        //set background of the buttons
         Kleurtjes1.setBackground(twodArray[0][0]);
         Kleurtjes2.setBackground(twodArray[0][1]);
         Kleurtjes3.setBackground(twodArray[0][2]);
@@ -999,6 +1002,7 @@ public class Main extends javax.swing.JFrame {
     }
 
     private void CheckIfSame() {
+        //check if the color that are selected are the same
         if(ColorClicked[0] == ColorClicked[1]){
             txt_goed_fout.setText("Zelfde kleur");
             ButtonArray[0].setEnabled(false);
@@ -1028,7 +1032,7 @@ public class Main extends javax.swing.JFrame {
             
         
     }
-
+    //write to file to store the highscore from the current run
     private void WriteToFile() {
        String content = Integer.toString(timesclicked-2);
         
