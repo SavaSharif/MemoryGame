@@ -47,7 +47,8 @@ public class Main extends javax.swing.JFrame {
     //String filename = "C:\\Documents\\GitHub\\MemoryGame\\highscore.txt";
     String filename = "highscore.txt";
     
-
+String Cursor1 = ("cursor1.png");
+        
     String line = null;
     int highscore;
 
@@ -154,7 +155,7 @@ public class Main extends javax.swing.JFrame {
         Finish = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        setCursor(Cursor1);
 
         Kleurtjes1.setBackground(new java.awt.Color(255, 153, 153));
         Kleurtjes1.setMaximumSize(new java.awt.Dimension(100, 100));
