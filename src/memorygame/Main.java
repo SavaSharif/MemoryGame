@@ -8,12 +8,14 @@ package memorygame;
 import java.awt.Color;
 import java.awt.Image;
 import java.util.Arrays;
+import java.awt.Cursor;
+import java.awt.Point;
+import java.awt.Toolkit;
 import java.util.Random;
 import javax.swing.JButton;
 import javax.swing.Timer;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.image.BufferedImage;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
@@ -21,7 +23,6 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.io.InputStream;
 import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 
@@ -34,7 +35,8 @@ public class Main extends javax.swing.JFrame {
     /**
      * Creates new form Main
      */
-    
+
+
     final Color[] ColorClicked = new Color[2];
     final JButton[] ButtonArray = new JButton[2];
     final Color[] colorArray = new Color[]{Color.BLUE, Color.BLUE, Color.CYAN, Color.CYAN, Color.MAGENTA, Color.MAGENTA, Color.ORANGE, Color.ORANGE, Color.PINK, Color.PINK, Color.YELLOW, Color.YELLOW, Color.RED, Color.RED, Color.GREEN, Color.GREEN};
@@ -44,65 +46,64 @@ public class Main extends javax.swing.JFrame {
     Timer timer, timer2, timer3;
     //String filename = "C:\\Documents\\GitHub\\MemoryGame\\highscore.txt";
     String filename = "highscore.txt";
-    String IconLocation = "C:\\Users\\jirib\\Documents\\GitHub\\MemoryGame\\294p5w6.jpg";
+    
+
     String line = null;
     int highscore;
-    
+
     public Main() {
 
         initComponents();
-        txt_goed_fout.setText("");
+        
+       
+
         jLabel1.setText("0");
         ShuffelArray(colorArray);
         CopyArray(colorArray, twodArray, arraygrootte);
         SetBackground(twodArray);
-        
-        
-        
+
         //read the stored highscore
-        try{
+        try {
             //FileReader reads text files in the default encoding.
             FileReader filereader = new FileReader(filename);
-            
+
             //Always wrap FileReader in BufferedReader.
             BufferedReader bufferedReader = new BufferedReader(filereader);
-            while((line = bufferedReader.readLine()) != null){
+            while ((line = bufferedReader.readLine()) != null) {
                 txt_highscore.setText(line);
                 highscore = Integer.parseInt(line);
-                
-            }            
+
+            }
+        } catch (FileNotFoundException ex) {
+            System.out.println("Unable to open file '" + filename + "'");
+        } catch (IOException ex) {
+            System.out.println("Error reading file '" + filename + "'");
         }
-        catch(FileNotFoundException ex){
-            System.out.println("Unable to open file '" + filename + "'");     
-        }
-           catch(IOException ex) {
-            System.out.println("Error reading file '" + filename + "'");                  
-        }
-        
+
         //timer for GUI bug
         timer = new Timer(500, new ActionListener() {
-                public void actionPerformed(ActionEvent e) {
-                    CheckIfSame();
-                    
-                }
-            });
+            public void actionPerformed(ActionEvent e) {
+                CheckIfSame();
+
+            }
+        });
         //timer to clear txt_goed_fout
         timer2 = new Timer(1000, new ActionListener() {
-                public void actionPerformed(ActionEvent e) {
-                   txt_goed_fout.setText(""); 
-                   timer2.stop();
-                    
-                }
-            });       
+            public void actionPerformed(ActionEvent e) {
+
+                timer2.stop();
+
+            }
+        });
         //launch new JFrame FinishedGame.java
         timer3 = new Timer(250, new ActionListener() {
-                public void actionPerformed(ActionEvent e) {
-                    FinishedGame finishedgame = new FinishedGame();
-                    finishedgame.setVisible(true);
-                   timer3.stop();
-                    
-                }
-            }); 
+            public void actionPerformed(ActionEvent e) {
+                FinishedGame finishedgame = new FinishedGame();
+                finishedgame.setVisible(true);
+                timer3.stop();
+
+            }
+        });
     }
 
     /**
@@ -148,16 +149,18 @@ public class Main extends javax.swing.JFrame {
         Button16 = new javax.swing.JButton();
         label1 = new java.awt.Label();
         jLabel1 = new javax.swing.JLabel();
-        txt_goed_fout = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         txt_highscore = new javax.swing.JLabel();
         Finish = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
         Kleurtjes1.setBackground(new java.awt.Color(255, 153, 153));
+        Kleurtjes1.setMaximumSize(new java.awt.Dimension(100, 100));
+        Kleurtjes1.setMinimumSize(new java.awt.Dimension(100, 100));
 
-        Button1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/memorygame/294p5w6.jpg"))); // NOI18N
+        Button1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/memorygame/cards.jpg"))); // NOI18N
         Button1.setMaximumSize(new java.awt.Dimension(100, 100));
         Button1.setMinimumSize(new java.awt.Dimension(100, 100));
         Button1.setPreferredSize(new java.awt.Dimension(100, 100));
@@ -179,8 +182,9 @@ public class Main extends javax.swing.JFrame {
         );
 
         Kleurtjes2.setBackground(new java.awt.Color(255, 153, 153));
+        Kleurtjes2.setMaximumSize(new java.awt.Dimension(100, 100));
 
-        Button2.setIcon(new javax.swing.ImageIcon("C:\\Users\\jirib\\Documents\\GitHub\\MemoryGame\\294p5w6.jpg")); // NOI18N
+        Button2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/memorygame/cards.jpg"))); // NOI18N
         Button2.setMaximumSize(new java.awt.Dimension(100, 100));
         Button2.setMinimumSize(new java.awt.Dimension(100, 100));
         Button2.setPreferredSize(new java.awt.Dimension(100, 100));
@@ -202,7 +206,13 @@ public class Main extends javax.swing.JFrame {
         );
 
         Kleurtjes3.setBackground(new java.awt.Color(255, 153, 153));
+        Kleurtjes3.setMaximumSize(new java.awt.Dimension(100, 100));
+        Kleurtjes3.setMinimumSize(new java.awt.Dimension(100, 100));
 
+        Button3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/memorygame/cards.jpg"))); // NOI18N
+        Button3.setMaximumSize(new java.awt.Dimension(100, 100));
+        Button3.setMinimumSize(new java.awt.Dimension(100, 100));
+        Button3.setPreferredSize(new java.awt.Dimension(100, 100));
         Button3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Button3ActionPerformed(evt);
@@ -213,15 +223,19 @@ public class Main extends javax.swing.JFrame {
         Kleurtjes3.setLayout(Kleurtjes3Layout);
         Kleurtjes3Layout.setHorizontalGroup(
             Kleurtjes3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Button3, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
+            .addComponent(Button3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         Kleurtjes3Layout.setVerticalGroup(
             Kleurtjes3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Button3, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
+            .addComponent(Button3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         Kleurtjes4.setBackground(new java.awt.Color(255, 153, 153));
 
+        Button4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/memorygame/cards.jpg"))); // NOI18N
+        Button4.setMaximumSize(new java.awt.Dimension(100, 100));
+        Button4.setMinimumSize(new java.awt.Dimension(100, 100));
+        Button4.setPreferredSize(new java.awt.Dimension(100, 100));
         Button4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Button4ActionPerformed(evt);
@@ -232,15 +246,19 @@ public class Main extends javax.swing.JFrame {
         Kleurtjes4.setLayout(Kleurtjes4Layout);
         Kleurtjes4Layout.setHorizontalGroup(
             Kleurtjes4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Button4, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
+            .addComponent(Button4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         Kleurtjes4Layout.setVerticalGroup(
             Kleurtjes4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Button4, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
+            .addComponent(Button4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         Kleurtjes5.setBackground(new java.awt.Color(255, 153, 153));
 
+        Button5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/memorygame/cards.jpg"))); // NOI18N
+        Button5.setMaximumSize(new java.awt.Dimension(100, 100));
+        Button5.setMinimumSize(new java.awt.Dimension(100, 100));
+        Button5.setPreferredSize(new java.awt.Dimension(100, 100));
         Button5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Button5ActionPerformed(evt);
@@ -251,15 +269,19 @@ public class Main extends javax.swing.JFrame {
         Kleurtjes5.setLayout(Kleurtjes5Layout);
         Kleurtjes5Layout.setHorizontalGroup(
             Kleurtjes5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Button5, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
+            .addComponent(Button5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         Kleurtjes5Layout.setVerticalGroup(
             Kleurtjes5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Button5, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
+            .addComponent(Button5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         Kleurtjes6.setBackground(new java.awt.Color(255, 153, 153));
 
+        Button6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/memorygame/cards.jpg"))); // NOI18N
+        Button6.setMaximumSize(new java.awt.Dimension(100, 100));
+        Button6.setMinimumSize(new java.awt.Dimension(100, 100));
+        Button6.setPreferredSize(new java.awt.Dimension(100, 100));
         Button6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Button6ActionPerformed(evt);
@@ -270,15 +292,19 @@ public class Main extends javax.swing.JFrame {
         Kleurtjes6.setLayout(Kleurtjes6Layout);
         Kleurtjes6Layout.setHorizontalGroup(
             Kleurtjes6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Button6, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
+            .addComponent(Button6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         Kleurtjes6Layout.setVerticalGroup(
             Kleurtjes6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Button6, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
+            .addComponent(Button6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         Kleurtjes7.setBackground(new java.awt.Color(255, 153, 153));
 
+        Button7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/memorygame/cards.jpg"))); // NOI18N
+        Button7.setMaximumSize(new java.awt.Dimension(100, 100));
+        Button7.setMinimumSize(new java.awt.Dimension(100, 100));
+        Button7.setPreferredSize(new java.awt.Dimension(100, 100));
         Button7.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Button7ActionPerformed(evt);
@@ -289,15 +315,19 @@ public class Main extends javax.swing.JFrame {
         Kleurtjes7.setLayout(Kleurtjes7Layout);
         Kleurtjes7Layout.setHorizontalGroup(
             Kleurtjes7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Button7, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
+            .addComponent(Button7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         Kleurtjes7Layout.setVerticalGroup(
             Kleurtjes7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Button7, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
+            .addComponent(Button7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         Kleurtjes8.setBackground(new java.awt.Color(255, 153, 153));
 
+        Button8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/memorygame/cards.jpg"))); // NOI18N
+        Button8.setMaximumSize(new java.awt.Dimension(100, 100));
+        Button8.setMinimumSize(new java.awt.Dimension(100, 100));
+        Button8.setPreferredSize(new java.awt.Dimension(100, 100));
         Button8.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Button8ActionPerformed(evt);
@@ -308,15 +338,19 @@ public class Main extends javax.swing.JFrame {
         Kleurtjes8.setLayout(Kleurtjes8Layout);
         Kleurtjes8Layout.setHorizontalGroup(
             Kleurtjes8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Button8, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
+            .addComponent(Button8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         Kleurtjes8Layout.setVerticalGroup(
             Kleurtjes8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Button8, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
+            .addComponent(Button8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         Kleurtjes9.setBackground(new java.awt.Color(255, 153, 153));
 
+        Button9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/memorygame/cards.jpg"))); // NOI18N
+        Button9.setMaximumSize(new java.awt.Dimension(100, 100));
+        Button9.setMinimumSize(new java.awt.Dimension(100, 100));
+        Button9.setPreferredSize(new java.awt.Dimension(100, 100));
         Button9.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Button9ActionPerformed(evt);
@@ -327,15 +361,19 @@ public class Main extends javax.swing.JFrame {
         Kleurtjes9.setLayout(Kleurtjes9Layout);
         Kleurtjes9Layout.setHorizontalGroup(
             Kleurtjes9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Button9, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
+            .addComponent(Button9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         Kleurtjes9Layout.setVerticalGroup(
             Kleurtjes9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Button9, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
+            .addComponent(Button9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         Kleurtjes10.setBackground(new java.awt.Color(255, 153, 153));
 
+        Button10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/memorygame/cards.jpg"))); // NOI18N
+        Button10.setMaximumSize(new java.awt.Dimension(100, 100));
+        Button10.setMinimumSize(new java.awt.Dimension(100, 100));
+        Button10.setPreferredSize(new java.awt.Dimension(100, 100));
         Button10.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Button10ActionPerformed(evt);
@@ -346,15 +384,19 @@ public class Main extends javax.swing.JFrame {
         Kleurtjes10.setLayout(Kleurtjes10Layout);
         Kleurtjes10Layout.setHorizontalGroup(
             Kleurtjes10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Button10, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
+            .addComponent(Button10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         Kleurtjes10Layout.setVerticalGroup(
             Kleurtjes10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Button10, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
+            .addComponent(Button10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         Kleurtjes11.setBackground(new java.awt.Color(255, 153, 153));
 
+        Button11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/memorygame/cards.jpg"))); // NOI18N
+        Button11.setMaximumSize(new java.awt.Dimension(100, 100));
+        Button11.setMinimumSize(new java.awt.Dimension(100, 100));
+        Button11.setPreferredSize(new java.awt.Dimension(100, 100));
         Button11.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Button11ActionPerformed(evt);
@@ -365,15 +407,19 @@ public class Main extends javax.swing.JFrame {
         Kleurtjes11.setLayout(Kleurtjes11Layout);
         Kleurtjes11Layout.setHorizontalGroup(
             Kleurtjes11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Button11, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
+            .addComponent(Button11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         Kleurtjes11Layout.setVerticalGroup(
             Kleurtjes11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Button11, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
+            .addComponent(Button11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         Kleurtjes12.setBackground(new java.awt.Color(255, 153, 153));
 
+        Button12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/memorygame/cards.jpg"))); // NOI18N
+        Button12.setMaximumSize(new java.awt.Dimension(100, 100));
+        Button12.setMinimumSize(new java.awt.Dimension(100, 100));
+        Button12.setPreferredSize(new java.awt.Dimension(100, 100));
         Button12.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Button12ActionPerformed(evt);
@@ -384,15 +430,19 @@ public class Main extends javax.swing.JFrame {
         Kleurtjes12.setLayout(Kleurtjes12Layout);
         Kleurtjes12Layout.setHorizontalGroup(
             Kleurtjes12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Button12, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
+            .addComponent(Button12, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         Kleurtjes12Layout.setVerticalGroup(
             Kleurtjes12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Button12, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
+            .addComponent(Button12, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         Kleurtjes13.setBackground(new java.awt.Color(255, 153, 153));
 
+        Button13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/memorygame/cards.jpg"))); // NOI18N
+        Button13.setMaximumSize(new java.awt.Dimension(100, 100));
+        Button13.setMinimumSize(new java.awt.Dimension(100, 100));
+        Button13.setPreferredSize(new java.awt.Dimension(100, 100));
         Button13.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Button13ActionPerformed(evt);
@@ -403,15 +453,19 @@ public class Main extends javax.swing.JFrame {
         Kleurtjes13.setLayout(Kleurtjes13Layout);
         Kleurtjes13Layout.setHorizontalGroup(
             Kleurtjes13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Button13, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
+            .addComponent(Button13, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         Kleurtjes13Layout.setVerticalGroup(
             Kleurtjes13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Button13, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
+            .addComponent(Button13, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         Kleurtjes14.setBackground(new java.awt.Color(255, 153, 153));
 
+        Button14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/memorygame/cards.jpg"))); // NOI18N
+        Button14.setMaximumSize(new java.awt.Dimension(100, 100));
+        Button14.setMinimumSize(new java.awt.Dimension(100, 100));
+        Button14.setPreferredSize(new java.awt.Dimension(100, 100));
         Button14.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Button14ActionPerformed(evt);
@@ -422,15 +476,19 @@ public class Main extends javax.swing.JFrame {
         Kleurtjes14.setLayout(Kleurtjes14Layout);
         Kleurtjes14Layout.setHorizontalGroup(
             Kleurtjes14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Button14, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
+            .addComponent(Button14, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         Kleurtjes14Layout.setVerticalGroup(
             Kleurtjes14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Button14, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
+            .addComponent(Button14, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         Kleurtjes15.setBackground(new java.awt.Color(255, 153, 153));
 
+        Button15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/memorygame/cards.jpg"))); // NOI18N
+        Button15.setMaximumSize(new java.awt.Dimension(100, 100));
+        Button15.setMinimumSize(new java.awt.Dimension(100, 100));
+        Button15.setPreferredSize(new java.awt.Dimension(100, 100));
         Button15.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Button15ActionPerformed(evt);
@@ -441,15 +499,19 @@ public class Main extends javax.swing.JFrame {
         Kleurtjes15.setLayout(Kleurtjes15Layout);
         Kleurtjes15Layout.setHorizontalGroup(
             Kleurtjes15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Button15, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
+            .addComponent(Button15, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         Kleurtjes15Layout.setVerticalGroup(
             Kleurtjes15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Button15, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
+            .addComponent(Button15, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         Kleurtjes16.setBackground(new java.awt.Color(255, 153, 153));
 
+        Button16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/memorygame/cards.jpg"))); // NOI18N
+        Button16.setMaximumSize(new java.awt.Dimension(100, 100));
+        Button16.setMinimumSize(new java.awt.Dimension(100, 100));
+        Button16.setPreferredSize(new java.awt.Dimension(100, 100));
         Button16.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Button16ActionPerformed(evt);
@@ -460,13 +522,15 @@ public class Main extends javax.swing.JFrame {
         Kleurtjes16.setLayout(Kleurtjes16Layout);
         Kleurtjes16Layout.setHorizontalGroup(
             Kleurtjes16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Button16, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
+            .addComponent(Button16, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         Kleurtjes16Layout.setVerticalGroup(
             Kleurtjes16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Button16, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
+            .addComponent(Button16, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
+        label1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        label1.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         label1.setText("Times Clicked:");
 
         jLabel1.setText("Score");
@@ -474,8 +538,7 @@ public class Main extends javax.swing.JFrame {
         jLabel1.setMinimumSize(new java.awt.Dimension(83, 20));
         jLabel1.setPreferredSize(new java.awt.Dimension(83, 20));
 
-        txt_goed_fout.setText("jTextField1");
-
+        jLabel2.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         jLabel2.setText("High Score:");
 
         txt_highscore.setText("highscore");
@@ -529,19 +592,17 @@ public class Main extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(Kleurtjes8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txt_goed_fout, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(Finish)
-                                .addGroup(layout.createSequentialGroup()
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(label1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(jLabel2))
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(txt_highscore)
-                                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))))
-                .addContainerGap(28, Short.MAX_VALUE))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(Finish)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(label1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel2))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(txt_highscore)
+                                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))))
+                .addContainerGap(38, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -570,9 +631,7 @@ public class Main extends javax.swing.JFrame {
                                     .addComponent(Kleurtjes11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(Kleurtjes12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(layout.createSequentialGroup()
-                                .addGap(22, 22, 22)
-                                .addComponent(txt_goed_fout, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(53, 53, 53)
+                                .addGap(95, 95, 95)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(label1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -586,7 +645,7 @@ public class Main extends javax.swing.JFrame {
                             .addComponent(Kleurtjes14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(Kleurtjes15, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(Kleurtjes16, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(32, Short.MAX_VALUE))
         );
 
         pack();
@@ -596,236 +655,235 @@ public class Main extends javax.swing.JFrame {
         // TODO add your handling code here:
         Button3.setContentAreaFilled(false);
         Button3.setBorderPainted(false);
-          if(timesclicked % 2 == 0){
+        Button3.setIcon(null);
+        if (timesclicked % 2 == 0) {
             ColorClicked[1] = twodArray[0][2];
             ButtonArray[1] = Button3;
             timer.start();
-        }
-         else{
+        } else {
             ColorClicked[0] = twodArray[0][2];
             ButtonArray[0] = Button3;
             timesclicked++;
         }
-        
-    jLabel1.setText(Integer.toString(timesclicked - 1));
-    
+
+        jLabel1.setText(Integer.toString(timesclicked - 1));
+
     }//GEN-LAST:event_Button3ActionPerformed
 
     private void Button4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Button4ActionPerformed
         // TODO add your handling code here:
         Button4.setContentAreaFilled(false);
         Button4.setBorderPainted(false);
-          if(timesclicked % 2 == 0){
+        Button4.setIcon(null);
+        if (timesclicked % 2 == 0) {
             ColorClicked[1] = twodArray[0][3];
             ButtonArray[1] = Button4;
             timer.start();
-        }
-         else{
+        } else {
             ColorClicked[0] = twodArray[0][3];
             ButtonArray[0] = Button4;
             timesclicked++;
         }
-        
-      jLabel1.setText(Integer.toString(timesclicked - 1));     
+
+        jLabel1.setText(Integer.toString(timesclicked - 1));
     }//GEN-LAST:event_Button4ActionPerformed
-   
+
     private void Button5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Button5ActionPerformed
         // TODO add your handling code here:
         Button5.setContentAreaFilled(false);
         Button5.setBorderPainted(false);
-          if(timesclicked % 2 == 0){
+        Button5.setIcon(null);
+        if (timesclicked % 2 == 0) {
             ColorClicked[1] = twodArray[1][0];
             ButtonArray[1] = Button5;
             timer.start();
-        }
-         else{
+        } else {
             ColorClicked[0] = twodArray[1][0];
             ButtonArray[0] = Button5;
             timesclicked++;
         }
-        
-      jLabel1.setText(Integer.toString(timesclicked - 1)); 
+
+        jLabel1.setText(Integer.toString(timesclicked - 1));
     }//GEN-LAST:event_Button5ActionPerformed
 
     private void Button6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Button6ActionPerformed
         // TODO add your handling code here:
         Button6.setContentAreaFilled(false);
         Button6.setBorderPainted(false);
-         if(timesclicked % 2 == 0){
+        Button6.setIcon(null);
+        if (timesclicked % 2 == 0) {
             ColorClicked[1] = twodArray[1][1];
             ButtonArray[1] = Button6;
             timer.start();
-        }
-         else{
+        } else {
             ColorClicked[0] = twodArray[1][1];
             ButtonArray[0] = Button6;
             timesclicked++;
         }
-        
-     jLabel1.setText(Integer.toString(timesclicked - 1));
+
+        jLabel1.setText(Integer.toString(timesclicked - 1));
     }//GEN-LAST:event_Button6ActionPerformed
 
     private void Button7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Button7ActionPerformed
         // TODO add your handling code here:
         Button7.setContentAreaFilled(false);
         Button7.setBorderPainted(false);
-          if(timesclicked % 2 == 0){
+        Button7.setIcon(null);
+        if (timesclicked % 2 == 0) {
             ColorClicked[1] = twodArray[1][2];
             ButtonArray[1] = Button7;
             timer.start();
-        }
-         else{
+        } else {
             ColorClicked[0] = twodArray[1][2];
             ButtonArray[0] = Button7;
             timesclicked++;
         }
-        
-        jLabel1.setText(Integer.toString(timesclicked - 1));   
+
+        jLabel1.setText(Integer.toString(timesclicked - 1));
     }//GEN-LAST:event_Button7ActionPerformed
 
     private void Button8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Button8ActionPerformed
         // TODO add your handling code here:
         Button8.setContentAreaFilled(false);
         Button8.setBorderPainted(false);
-          if(timesclicked % 2 == 0){
+        Button8.setIcon(null);
+        if (timesclicked % 2 == 0) {
             ColorClicked[1] = twodArray[1][3];
             ButtonArray[1] = Button8;
             timer.start();
-        }
-         else{
+        } else {
             ColorClicked[0] = twodArray[1][3];
             ButtonArray[0] = Button8;
             timesclicked++;
         }
-        
-     jLabel1.setText(Integer.toString(timesclicked - 1)); 
+
+        jLabel1.setText(Integer.toString(timesclicked - 1));
     }//GEN-LAST:event_Button8ActionPerformed
 
     private void Button9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Button9ActionPerformed
         // TODO add your handling code here:Button3.setContentAreaFilled(false);
         Button9.setContentAreaFilled(false);
         Button9.setBorderPainted(false);
-          if(timesclicked % 2 == 0){
+        Button9.setIcon(null);
+        if (timesclicked % 2 == 0) {
             ColorClicked[1] = twodArray[2][0];
             ButtonArray[1] = Button9;
             timer.start();
-        }
-         else{
+        } else {
             ColorClicked[0] = twodArray[2][0];
             ButtonArray[0] = Button9;
             timesclicked++;
         }
-        
-      
-      jLabel1.setText(Integer.toString(timesclicked - 1));  
+
+        jLabel1.setText(Integer.toString(timesclicked - 1));
     }//GEN-LAST:event_Button9ActionPerformed
 
     private void Button10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Button10ActionPerformed
         // TODO add your handling code here: 
         Button10.setContentAreaFilled(false);
         Button10.setBorderPainted(false);
-         if(timesclicked % 2 == 0){
+        Button10.setIcon(null);
+        if (timesclicked % 2 == 0) {
             ColorClicked[1] = twodArray[2][1];
             ButtonArray[1] = Button10;
             timer.start();
-        }
-         else{
+        } else {
             ColorClicked[0] = twodArray[2][1];
             ButtonArray[0] = Button10;
             timesclicked++;
         }
-        
-     jLabel1.setText(Integer.toString(timesclicked - 1));   
+
+        jLabel1.setText(Integer.toString(timesclicked - 1));
     }//GEN-LAST:event_Button10ActionPerformed
 
     private void Button11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Button11ActionPerformed
         // TODO add your handling code here:
         Button11.setContentAreaFilled(false);
         Button11.setBorderPainted(false);
-         if(timesclicked % 2 == 0){
+           Button11.setIcon(null);
+        if (timesclicked % 2 == 0) {
             ColorClicked[1] = twodArray[2][2];
             ButtonArray[1] = Button11;
             timer.start();
-        }
-         else{
+        } else {
             ColorClicked[0] = twodArray[2][2];
             ButtonArray[0] = Button11;
             timesclicked++;
         }
-        
-    jLabel1.setText(Integer.toString(timesclicked - 1));   
+
+        jLabel1.setText(Integer.toString(timesclicked - 1));
     }//GEN-LAST:event_Button11ActionPerformed
 
     private void Button12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Button12ActionPerformed
         // TODO add your handling code here:
         Button12.setContentAreaFilled(false);
         Button12.setBorderPainted(false);
-        if(timesclicked % 2 == 0){
+        Button12.setIcon(null);
+        if (timesclicked % 2 == 0) {
             ColorClicked[1] = twodArray[2][3];
             ButtonArray[1] = Button12;
             timer.start();
-        }
-         else{
+        } else {
             ColorClicked[0] = twodArray[2][3];
             ButtonArray[0] = Button12;
             timesclicked++;
         }
-        
-     jLabel1.setText(Integer.toString(timesclicked - 1));   
+
+        jLabel1.setText(Integer.toString(timesclicked - 1));
     }//GEN-LAST:event_Button12ActionPerformed
 
     private void Button13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Button13ActionPerformed
         // TODO add your handling code here:
         Button13.setContentAreaFilled(false);
         Button13.setBorderPainted(false);
-         if(timesclicked % 2 == 0){
+        Button13.setIcon(null);
+        if (timesclicked % 2 == 0) {
             ColorClicked[1] = twodArray[3][0];
             ButtonArray[1] = Button13;
             timer.start();
-        }
-        else{
+        } else {
             ColorClicked[0] = twodArray[3][0];
             ButtonArray[0] = Button13;
             timesclicked++;
         }
-        
-     jLabel1.setText(Integer.toString(timesclicked - 1));   
+
+        jLabel1.setText(Integer.toString(timesclicked - 1));
     }//GEN-LAST:event_Button13ActionPerformed
 
     private void Button14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Button14ActionPerformed
         // TODO add your handling code here:
         Button14.setContentAreaFilled(false);
         Button14.setBorderPainted(false);
-         if(timesclicked % 2 == 0){
+        Button14.setIcon(null);
+        if (timesclicked % 2 == 0) {
             ColorClicked[1] = twodArray[3][1];
             ButtonArray[1] = Button14;
             timer.start();
-        }
-        else{
+        } else {
             ColorClicked[0] = twodArray[3][1];
             ButtonArray[0] = Button14;
             timesclicked++;
         }
-        
-     jLabel1.setText(Integer.toString(timesclicked - 1));   
+
+        jLabel1.setText(Integer.toString(timesclicked - 1));
     }//GEN-LAST:event_Button14ActionPerformed
 
     private void Button15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Button15ActionPerformed
         // TODO add your handling code here:
         Button15.setContentAreaFilled(false);
         Button15.setBorderPainted(false);
-          if(timesclicked % 2 == 0){
+        Button15.setIcon(null);
+        if (timesclicked % 2 == 0) {
             ColorClicked[1] = twodArray[3][2];
             ButtonArray[1] = Button15;
             timer.start();
-        }
-         else{
+        } else {
             ColorClicked[0] = twodArray[3][2];
             ButtonArray[0] = Button15;
             timesclicked++;
         }
-        
-     jLabel1.setText(Integer.toString(timesclicked - 1));   
+
+        jLabel1.setText(Integer.toString(timesclicked - 1));
     }//GEN-LAST:event_Button15ActionPerformed
 
     private void Button2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Button2ActionPerformed
@@ -833,18 +891,17 @@ public class Main extends javax.swing.JFrame {
         Button2.setContentAreaFilled(false);
         Button2.setBorderPainted(false);
         Button2.setIcon(null);
-          if(timesclicked % 2 == 0){
+        if (timesclicked % 2 == 0) {
             ColorClicked[1] = twodArray[0][1];
             ButtonArray[1] = Button2;
             timer.start();
-        }
-          else{
+        } else {
             ColorClicked[0] = twodArray[0][1];
             ButtonArray[0] = Button2;
             timesclicked++;
         }
-        
-      jLabel1.setText(Integer.toString(timesclicked - 1)); 
+
+        jLabel1.setText(Integer.toString(timesclicked - 1));
     }//GEN-LAST:event_Button2ActionPerformed
 
     private void Button1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Button1ActionPerformed
@@ -852,44 +909,43 @@ public class Main extends javax.swing.JFrame {
         Button1.setContentAreaFilled(false);
         Button1.setBorderPainted(false);
         Button1.setIcon(null);
-          if(timesclicked % 2 == 0){
+        if (timesclicked % 2 == 0) {
             ColorClicked[1] = twodArray[0][0];
             ButtonArray[1] = Button1;
             timer.start();
-        }
-         else{
+        } else {
             ColorClicked[0] = twodArray[0][0];
             ButtonArray[0] = Button1;
             timesclicked++;
         }
         jLabel1.setText(Integer.toString(timesclicked - 1));
-      
- 
+
+
     }//GEN-LAST:event_Button1ActionPerformed
 
     private void Button16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Button16ActionPerformed
         // TODO add your handling code here:
         Button16.setContentAreaFilled(false);
         Button16.setBorderPainted(false);
-          if(timesclicked % 2 == 0){
+           Button16.setIcon(null);
+        if (timesclicked % 2 == 0) {
             ColorClicked[1] = twodArray[3][3];
             ButtonArray[1] = Button16;
             timer.start();
-        }
-         else{
+        } else {
             ColorClicked[0] = twodArray[3][3];
             ButtonArray[0] = Button16;
             timesclicked++;
         }
-       jLabel1.setText(Integer.toString(timesclicked - 1));
+        jLabel1.setText(Integer.toString(timesclicked - 1));
     }//GEN-LAST:event_Button16ActionPerformed
 
     private void FinishActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FinishActionPerformed
         WriteToFile();
         this.setVisible(false);
         timer3.start();
-        
-        
+
+
     }//GEN-LAST:event_FinishActionPerformed
 
     /**
@@ -964,14 +1020,8 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private java.awt.Label label1;
-    private javax.swing.JTextField txt_goed_fout;
     private javax.swing.JLabel txt_highscore;
     // End of variables declaration//GEN-END:variables
-
-
- 
-
-    
 
     private void ShuffelArray(Color[] colorArray) {
         //shuffle colors
@@ -988,11 +1038,11 @@ public class Main extends javax.swing.JFrame {
     private void CopyArray(Color[] colorArray, Color[][] twodArray, int arraygrootte) {
         //copy the one array into one 2d array
         int k = 0;
-        for(int i = 0; i < arraygrootte; i++ ){
-            for(int j = 0; j < arraygrootte; j++){
+        for (int i = 0; i < arraygrootte; i++) {
+            for (int j = 0; j < arraygrootte; j++) {
                 twodArray[i][j] = colorArray[k];
                 k++;
-                
+
             }
         }
     }
@@ -1020,92 +1070,80 @@ public class Main extends javax.swing.JFrame {
 
     private void CheckIfSame() {
         //check if the color that are selected are the same
-        if(ColorClicked[0] == ColorClicked[1]){
-            txt_goed_fout.setText("Zelfde kleur");
+        if (ColorClicked[0] == ColorClicked[1]) {
+
             ButtonArray[0].setEnabled(false);
             ButtonArray[1].setEnabled(false);
             Arrays.fill(ButtonArray, null);
-            Arrays.fill(ColorClicked, null); 
+            Arrays.fill(ColorClicked, null);
             timesclicked++;
-        }
-        else{          
-            txt_goed_fout.setText("niet dezelfde kleur");
+        } else {
+
             ButtonArray[0].setContentAreaFilled(true);
-            ButtonArray[0].setBorderPainted(true); 
+            ButtonArray[0].setBorderPainted(true);
             ButtonArray[1].setContentAreaFilled(true);
-            ButtonArray[1].setBorderPainted(true); 
+            ButtonArray[1].setBorderPainted(true);
             setIcon();
             Arrays.fill(ButtonArray, null);
             Arrays.fill(ColorClicked, null);
             timesclicked++;
-            
-            
-            
+
         }
         timer.stop();
         timer2.start();
-            
-        
+
     }
+
     //write to file to store the highscore from the current run
     private void WriteToFile() {
-       String content = Integer.toString(timesclicked-2);
-        
-        if(timesclicked < highscore){ 
-            
-        
-            try{
+        String content = Integer.toString(timesclicked - 2);
+
+        if (timesclicked < highscore) {
+
+            try {
                 //Assume default encoding.
                 FileWriter filerwriter = new FileWriter(filename);
-            
+
                 //Always wrap FileWriter in BufferedWriter.
                 BufferedWriter bufferedwriter = new BufferedWriter(filerwriter);
                 bufferedwriter.write(content);
                 //close
                 bufferedwriter.close();
-                
-            }
-             catch(IOException ex) {
+
+            } catch (IOException ex) {
                 System.out.println("Error writing to file '" + filename + "'");
             }
         }
-        
-        if(highscore == 0){
-            try{
+
+        if (highscore == 0) {
+            try {
                 //Assume default encoding.
                 FileWriter filerwriter = new FileWriter(filename);
-            
+
                 //Always wrap FileWriter in BufferedWriter.
                 BufferedWriter bufferedwriter = new BufferedWriter(filerwriter);
                 bufferedwriter.write(content);
                 //close
                 bufferedwriter.close();
-              
-            }
-             catch(IOException ex) {
+
+            } catch (IOException ex) {
                 System.out.println("Error writing to file '" + filename + "'");
             }
-            
+
         }
     }
 
     private void setIcon() {
-          
-           try {
-           Image img = ImageIO.read(getClass().getResource("294p5w6.jpg"));
-           ButtonArray[0].setIcon(new ImageIcon(img));
-            } catch (IOException ex) {
-                System.out.println("icon niet gevonden");
-            }
-           
-           
-           try {
-           Image img = ImageIO.read(getClass().getResource("294p5w6.jpg"));
-           ButtonArray[1].setIcon(new ImageIcon(img));
-            } catch (IOException ex) {
-                System.out.println("icon niet gevonden");
-            }
+
+        try {
+            Image img = ImageIO.read(getClass().getResource("cards.jpg"));
+            ButtonArray[0].setIcon(new ImageIcon(img));
+            ButtonArray[1].setIcon(new ImageIcon(img));
+
+        } catch (IOException ex) {
+            System.out.println("icon niet gevonden");
+        }
+
     }
 
-    
 }
