@@ -27,7 +27,8 @@ public class FinishedGame extends javax.swing.JFrame {
      */
     public FinishedGame() {
         initComponents();
-         String filename = "F:\\Documents\\GitHub\\MemoryGame\\highscore.txt";
+        // String filename = "C:\\Documents\\GitHub\\MemoryGame\\highscore.txt";
+         String filename = "highscore.txt";
          String line = null;
         //read highscore.txt
         try{
@@ -51,7 +52,8 @@ public class FinishedGame extends javax.swing.JFrame {
         //play party horn sound
         try {
         java.applet.AudioClip clip = Applet.newAudioClip(
-        new URL("file:F:\\Documents\\GitHub\\MemoryGame\\images\\PartyHorn.wav"));
+        //new URL("file:C:\\Documents\\GitHub\\MemoryGame\\images\\PartyHorn.wav"));
+          new URL("file:PartyHorn.wav"));
         clip.play();
         } catch (MalformedURLException murle) {
         System.out.println(murle);
@@ -92,7 +94,7 @@ public class FinishedGame extends javax.swing.JFrame {
         highscore.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         highscore.setText("jLabel3");
 
-        Gif.setIcon(new javax.swing.ImageIcon("F:\\Documents\\GitHub\\MemoryGame\\images\\party-horn-o.gif")); // NOI18N
+        Gif.setIcon(new javax.swing.ImageIcon(getClass().getResource("/memorygame/party-horn-o.gif"))); // NOI18N
         Gif.setText("Gif");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
