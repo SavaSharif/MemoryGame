@@ -14,13 +14,11 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
-import javax.swing.Icon;
 import javax.swing.ImageIcon;
-import javax.swing.JLabel;
 
 /**
  *
- * @author jiri
+ * @author Jiri Booij, Sava Sharif
  */
 public class FinishedGame extends javax.swing.JFrame {
 

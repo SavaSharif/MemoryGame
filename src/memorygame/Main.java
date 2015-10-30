@@ -8,7 +8,6 @@ package memorygame;
 import java.awt.Color;
 import java.awt.Image;
 import java.util.Arrays;
-import java.awt.Cursor;
 import java.awt.Point;
 import java.awt.Toolkit;
 import java.util.Random;
@@ -18,7 +17,6 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
-import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
@@ -28,7 +26,7 @@ import javax.swing.ImageIcon;
 
 /**
  *
- * @author bla
+ * @author Jiri Booij, Sava Sharif
  */
 public class Main extends javax.swing.JFrame {
 
