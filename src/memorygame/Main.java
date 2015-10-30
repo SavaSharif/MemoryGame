@@ -44,23 +44,18 @@ public class Main extends javax.swing.JFrame {
     Timer timer, timer2, timer3;
     //String filename = "C:\\Documents\\GitHub\\MemoryGame\\highscore.txt";
     String filename = "highscore.txt";
-
-        
     String line = null;
     int highscore;
 
     public Main() {
 
         initComponents();
-        
-        
         try{
             setCursor(Toolkit.getDefaultToolkit().createCustomCursor(new ImageIcon("cursor1.png").getImage(), new Point(0,0),"custom cursor"));
-        }catch(Exception e){}
+        }catch(Exception e){
+            System.out.println("Error reading custom curosr");
+        }
         
-        
-       
-
         jLabel1.setText("0");
         ShuffelArray(colorArray);
         CopyArray(colorArray, twodArray, arraygrootte);
@@ -76,7 +71,6 @@ public class Main extends javax.swing.JFrame {
             while ((line = bufferedReader.readLine()) != null) {
                 txt_highscore.setText(line);
                 highscore = Integer.parseInt(line);
-
             }
         } catch (FileNotFoundException ex) {
             System.out.println("Unable to open file '" + filename + "'");
@@ -88,24 +82,15 @@ public class Main extends javax.swing.JFrame {
         timer = new Timer(500, new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 CheckIfSame();
-
             }
         });
-        //timer to clear txt_goed_fout
-        timer2 = new Timer(1000, new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
 
-                timer2.stop();
-
-            }
-        });
         //launch new JFrame FinishedGame.java
         timer3 = new Timer(250, new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 FinishedGame finishedgame = new FinishedGame();
                 finishedgame.setVisible(true);
                 timer3.stop();
-
             }
         });
     }
@@ -759,7 +744,6 @@ public class Main extends javax.swing.JFrame {
             ButtonArray[0] = Button8;
             timesclicked++;
         }
-
         jLabel1.setText(Integer.toString(timesclicked - 1));
     }//GEN-LAST:event_Button8ActionPerformed
 
@@ -777,7 +761,6 @@ public class Main extends javax.swing.JFrame {
             ButtonArray[0] = Button9;
             timesclicked++;
         }
-
         jLabel1.setText(Integer.toString(timesclicked - 1));
     }//GEN-LAST:event_Button9ActionPerformed
 
@@ -795,7 +778,6 @@ public class Main extends javax.swing.JFrame {
             ButtonArray[0] = Button10;
             timesclicked++;
         }
-
         jLabel1.setText(Integer.toString(timesclicked - 1));
     }//GEN-LAST:event_Button10ActionPerformed
 
@@ -813,7 +795,6 @@ public class Main extends javax.swing.JFrame {
             ButtonArray[0] = Button11;
             timesclicked++;
         }
-
         jLabel1.setText(Integer.toString(timesclicked - 1));
     }//GEN-LAST:event_Button11ActionPerformed
 
@@ -831,7 +812,6 @@ public class Main extends javax.swing.JFrame {
             ButtonArray[0] = Button12;
             timesclicked++;
         }
-
         jLabel1.setText(Integer.toString(timesclicked - 1));
     }//GEN-LAST:event_Button12ActionPerformed
 
@@ -849,7 +829,6 @@ public class Main extends javax.swing.JFrame {
             ButtonArray[0] = Button13;
             timesclicked++;
         }
-
         jLabel1.setText(Integer.toString(timesclicked - 1));
     }//GEN-LAST:event_Button13ActionPerformed
 
@@ -867,7 +846,6 @@ public class Main extends javax.swing.JFrame {
             ButtonArray[0] = Button14;
             timesclicked++;
         }
-
         jLabel1.setText(Integer.toString(timesclicked - 1));
     }//GEN-LAST:event_Button14ActionPerformed
 
@@ -885,7 +863,6 @@ public class Main extends javax.swing.JFrame {
             ButtonArray[0] = Button15;
             timesclicked++;
         }
-
         jLabel1.setText(Integer.toString(timesclicked - 1));
     }//GEN-LAST:event_Button15ActionPerformed
 
@@ -903,7 +880,6 @@ public class Main extends javax.swing.JFrame {
             ButtonArray[0] = Button2;
             timesclicked++;
         }
-
         jLabel1.setText(Integer.toString(timesclicked - 1));
     }//GEN-LAST:event_Button2ActionPerformed
 
@@ -922,8 +898,6 @@ public class Main extends javax.swing.JFrame {
             timesclicked++;
         }
         jLabel1.setText(Integer.toString(timesclicked - 1));
-
-
     }//GEN-LAST:event_Button1ActionPerformed
 
     private void Button16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Button16ActionPerformed
@@ -947,8 +921,6 @@ public class Main extends javax.swing.JFrame {
         WriteToFile();
         this.setVisible(false);
         timer3.start();
-
-
     }//GEN-LAST:event_FinishActionPerformed
 
     /**
@@ -1045,13 +1017,12 @@ public class Main extends javax.swing.JFrame {
             for (int j = 0; j < arraygrootte; j++) {
                 twodArray[i][j] = colorArray[k];
                 k++;
-
             }
         }
     }
 
     private void SetBackground(Color[][] twodArray) {
-        //set background of the buttons
+        //set background of the Jpanels
         Kleurtjes1.setBackground(twodArray[0][0]);
         Kleurtjes2.setBackground(twodArray[0][1]);
         Kleurtjes3.setBackground(twodArray[0][2]);
@@ -1074,7 +1045,6 @@ public class Main extends javax.swing.JFrame {
     private void CheckIfSame() {
         //check if the color that are selected are the same
         if (ColorClicked[0] == ColorClicked[1]) {
-
             ButtonArray[0].setEnabled(false);
             ButtonArray[1].setEnabled(false);
             Arrays.fill(ButtonArray, null);
@@ -1090,11 +1060,8 @@ public class Main extends javax.swing.JFrame {
             Arrays.fill(ButtonArray, null);
             Arrays.fill(ColorClicked, null);
             timesclicked++;
-
         }
         timer.stop();
-        timer2.start();
-
     }
 
     //write to file to store the highscore from the current run
@@ -1132,7 +1099,6 @@ public class Main extends javax.swing.JFrame {
             } catch (IOException ex) {
                 System.out.println("Error writing to file '" + filename + "'");
             }
-
         }
     }
 
@@ -1146,7 +1112,5 @@ public class Main extends javax.swing.JFrame {
         } catch (IOException ex) {
             System.out.println("icon niet gevonden");
         }
-
     }
-
 }

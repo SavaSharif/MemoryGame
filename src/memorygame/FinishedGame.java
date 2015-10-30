@@ -63,14 +63,6 @@ public class FinishedGame extends javax.swing.JFrame {
         } catch (MalformedURLException murle) {
         System.out.println(murle);
         }
-        
-        
-        
-        
-        
-        
-        
-        
     }
 
     /**
