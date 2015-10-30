@@ -33,10 +33,8 @@ public class Main extends javax.swing.JFrame {
     /**
      * Creates new form Main
      */
-
-
     final Color[] ColorClicked = new Color[2];
-    final JButton[] ButtonArray = new JButton[2];
+    final JButton[] CardArray = new JButton[2];
     final Color[] colorArray = new Color[]{Color.BLUE, Color.BLUE, Color.CYAN, Color.CYAN, Color.MAGENTA, Color.MAGENTA, Color.ORANGE, Color.ORANGE, Color.PINK, Color.PINK, Color.YELLOW, Color.YELLOW, Color.RED, Color.RED, Color.GREEN, Color.GREEN};
     int timesclicked = 1;
     int arraygrootte = colorArray.length / 4;
@@ -50,13 +48,13 @@ public class Main extends javax.swing.JFrame {
     public Main() {
 
         initComponents();
-        try{
-            setCursor(Toolkit.getDefaultToolkit().createCustomCursor(new ImageIcon("cursor1.png").getImage(), new Point(0,0),"custom cursor"));
-        }catch(Exception e){
+        try {
+            setCursor(Toolkit.getDefaultToolkit().createCustomCursor(new ImageIcon("cursor1.png").getImage(), new Point(0, 0), "custom cursor"));
+        } catch (Exception e) {
             System.out.println("Error reading custom curosr");
         }
-        
-        jLabel1.setText("0");
+
+        Score.setText("0");
         ShuffelArray(colorArray);
         CopyArray(colorArray, twodArray, arraygrootte);
         SetBackground(twodArray);
@@ -69,7 +67,7 @@ public class Main extends javax.swing.JFrame {
             //Always wrap FileReader in BufferedReader.
             BufferedReader bufferedReader = new BufferedReader(filereader);
             while ((line = bufferedReader.readLine()) != null) {
-                txt_highscore.setText(line);
+                Highscore.setText(line);
                 highscore = Integer.parseInt(line);
             }
         } catch (FileNotFoundException ex) {
@@ -104,432 +102,432 @@ public class Main extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        Kleurtjes1 = new javax.swing.JPanel();
-        Button1 = new javax.swing.JButton();
-        Kleurtjes2 = new javax.swing.JPanel();
-        Button2 = new javax.swing.JButton();
-        Kleurtjes3 = new javax.swing.JPanel();
-        Button3 = new javax.swing.JButton();
-        Kleurtjes4 = new javax.swing.JPanel();
-        Button4 = new javax.swing.JButton();
-        Kleurtjes5 = new javax.swing.JPanel();
-        Button5 = new javax.swing.JButton();
-        Kleurtjes6 = new javax.swing.JPanel();
-        Button6 = new javax.swing.JButton();
-        Kleurtjes7 = new javax.swing.JPanel();
-        Button7 = new javax.swing.JButton();
-        Kleurtjes8 = new javax.swing.JPanel();
-        Button8 = new javax.swing.JButton();
-        Kleurtjes9 = new javax.swing.JPanel();
-        Button9 = new javax.swing.JButton();
-        Kleurtjes10 = new javax.swing.JPanel();
-        Button10 = new javax.swing.JButton();
-        Kleurtjes11 = new javax.swing.JPanel();
-        Button11 = new javax.swing.JButton();
-        Kleurtjes12 = new javax.swing.JPanel();
-        Button12 = new javax.swing.JButton();
-        Kleurtjes13 = new javax.swing.JPanel();
-        Button13 = new javax.swing.JButton();
-        Kleurtjes14 = new javax.swing.JPanel();
-        Button14 = new javax.swing.JButton();
-        Kleurtjes15 = new javax.swing.JPanel();
-        Button15 = new javax.swing.JButton();
-        Kleurtjes16 = new javax.swing.JPanel();
-        Button16 = new javax.swing.JButton();
-        label1 = new java.awt.Label();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        txt_highscore = new javax.swing.JLabel();
+        CardColor1 = new javax.swing.JPanel();
+        Card1 = new javax.swing.JButton();
+        CardColor2 = new javax.swing.JPanel();
+        Card2 = new javax.swing.JButton();
+        CardColor3 = new javax.swing.JPanel();
+        Card3 = new javax.swing.JButton();
+        CardColor4 = new javax.swing.JPanel();
+        Card4 = new javax.swing.JButton();
+        CardColor5 = new javax.swing.JPanel();
+        Card5 = new javax.swing.JButton();
+        CardColor6 = new javax.swing.JPanel();
+        Card6 = new javax.swing.JButton();
+        CardColor7 = new javax.swing.JPanel();
+        Card7 = new javax.swing.JButton();
+        CardColor8 = new javax.swing.JPanel();
+        Card8 = new javax.swing.JButton();
+        CardColor9 = new javax.swing.JPanel();
+        Card9 = new javax.swing.JButton();
+        CardColor10 = new javax.swing.JPanel();
+        Card10 = new javax.swing.JButton();
+        CardColor11 = new javax.swing.JPanel();
+        Card11 = new javax.swing.JButton();
+        CardColor12 = new javax.swing.JPanel();
+        Card12 = new javax.swing.JButton();
+        CardColor13 = new javax.swing.JPanel();
+        Card13 = new javax.swing.JButton();
+        CardColor14 = new javax.swing.JPanel();
+        Card14 = new javax.swing.JButton();
+        CardColor15 = new javax.swing.JPanel();
+        Card15 = new javax.swing.JButton();
+        CardColor16 = new javax.swing.JPanel();
+        Card16 = new javax.swing.JButton();
+        TimesClicked = new java.awt.Label();
+        Score = new javax.swing.JLabel();
+        Highscore1 = new javax.swing.JLabel();
+        Highscore = new javax.swing.JLabel();
         Finish = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        Kleurtjes1.setBackground(new java.awt.Color(255, 153, 153));
-        Kleurtjes1.setMaximumSize(new java.awt.Dimension(100, 100));
-        Kleurtjes1.setMinimumSize(new java.awt.Dimension(100, 100));
+        CardColor1.setBackground(new java.awt.Color(255, 153, 153));
+        CardColor1.setMaximumSize(new java.awt.Dimension(100, 100));
+        CardColor1.setMinimumSize(new java.awt.Dimension(100, 100));
 
-        Button1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/memorygame/cards.jpg"))); // NOI18N
-        Button1.setMaximumSize(new java.awt.Dimension(100, 100));
-        Button1.setMinimumSize(new java.awt.Dimension(100, 100));
-        Button1.setPreferredSize(new java.awt.Dimension(100, 100));
-        Button1.addActionListener(new java.awt.event.ActionListener() {
+        Card1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/memorygame/cards.jpg"))); // NOI18N
+        Card1.setMaximumSize(new java.awt.Dimension(100, 100));
+        Card1.setMinimumSize(new java.awt.Dimension(100, 100));
+        Card1.setPreferredSize(new java.awt.Dimension(100, 100));
+        Card1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Button1ActionPerformed(evt);
+                Card1ActionPerformed(evt);
             }
         });
 
-        javax.swing.GroupLayout Kleurtjes1Layout = new javax.swing.GroupLayout(Kleurtjes1);
-        Kleurtjes1.setLayout(Kleurtjes1Layout);
-        Kleurtjes1Layout.setHorizontalGroup(
-            Kleurtjes1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Button1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        javax.swing.GroupLayout CardColor1Layout = new javax.swing.GroupLayout(CardColor1);
+        CardColor1.setLayout(CardColor1Layout);
+        CardColor1Layout.setHorizontalGroup(
+            CardColor1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(Card1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
-        Kleurtjes1Layout.setVerticalGroup(
-            Kleurtjes1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Button1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        CardColor1Layout.setVerticalGroup(
+            CardColor1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(Card1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
-        Kleurtjes2.setBackground(new java.awt.Color(255, 153, 153));
-        Kleurtjes2.setMaximumSize(new java.awt.Dimension(100, 100));
+        CardColor2.setBackground(new java.awt.Color(255, 153, 153));
+        CardColor2.setMaximumSize(new java.awt.Dimension(100, 100));
 
-        Button2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/memorygame/cards.jpg"))); // NOI18N
-        Button2.setMaximumSize(new java.awt.Dimension(100, 100));
-        Button2.setMinimumSize(new java.awt.Dimension(100, 100));
-        Button2.setPreferredSize(new java.awt.Dimension(100, 100));
-        Button2.addActionListener(new java.awt.event.ActionListener() {
+        Card2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/memorygame/cards.jpg"))); // NOI18N
+        Card2.setMaximumSize(new java.awt.Dimension(100, 100));
+        Card2.setMinimumSize(new java.awt.Dimension(100, 100));
+        Card2.setPreferredSize(new java.awt.Dimension(100, 100));
+        Card2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Button2ActionPerformed(evt);
+                Card2ActionPerformed(evt);
             }
         });
 
-        javax.swing.GroupLayout Kleurtjes2Layout = new javax.swing.GroupLayout(Kleurtjes2);
-        Kleurtjes2.setLayout(Kleurtjes2Layout);
-        Kleurtjes2Layout.setHorizontalGroup(
-            Kleurtjes2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Button2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        javax.swing.GroupLayout CardColor2Layout = new javax.swing.GroupLayout(CardColor2);
+        CardColor2.setLayout(CardColor2Layout);
+        CardColor2Layout.setHorizontalGroup(
+            CardColor2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(Card2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
-        Kleurtjes2Layout.setVerticalGroup(
-            Kleurtjes2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Button2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        CardColor2Layout.setVerticalGroup(
+            CardColor2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(Card2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
-        Kleurtjes3.setBackground(new java.awt.Color(255, 153, 153));
-        Kleurtjes3.setMaximumSize(new java.awt.Dimension(100, 100));
-        Kleurtjes3.setMinimumSize(new java.awt.Dimension(100, 100));
+        CardColor3.setBackground(new java.awt.Color(255, 153, 153));
+        CardColor3.setMaximumSize(new java.awt.Dimension(100, 100));
+        CardColor3.setMinimumSize(new java.awt.Dimension(100, 100));
 
-        Button3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/memorygame/cards.jpg"))); // NOI18N
-        Button3.setMaximumSize(new java.awt.Dimension(100, 100));
-        Button3.setMinimumSize(new java.awt.Dimension(100, 100));
-        Button3.setPreferredSize(new java.awt.Dimension(100, 100));
-        Button3.addActionListener(new java.awt.event.ActionListener() {
+        Card3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/memorygame/cards.jpg"))); // NOI18N
+        Card3.setMaximumSize(new java.awt.Dimension(100, 100));
+        Card3.setMinimumSize(new java.awt.Dimension(100, 100));
+        Card3.setPreferredSize(new java.awt.Dimension(100, 100));
+        Card3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Button3ActionPerformed(evt);
+                Card3ActionPerformed(evt);
             }
         });
 
-        javax.swing.GroupLayout Kleurtjes3Layout = new javax.swing.GroupLayout(Kleurtjes3);
-        Kleurtjes3.setLayout(Kleurtjes3Layout);
-        Kleurtjes3Layout.setHorizontalGroup(
-            Kleurtjes3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Button3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        javax.swing.GroupLayout CardColor3Layout = new javax.swing.GroupLayout(CardColor3);
+        CardColor3.setLayout(CardColor3Layout);
+        CardColor3Layout.setHorizontalGroup(
+            CardColor3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(Card3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
-        Kleurtjes3Layout.setVerticalGroup(
-            Kleurtjes3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Button3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        CardColor3Layout.setVerticalGroup(
+            CardColor3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(Card3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
-        Kleurtjes4.setBackground(new java.awt.Color(255, 153, 153));
+        CardColor4.setBackground(new java.awt.Color(255, 153, 153));
 
-        Button4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/memorygame/cards.jpg"))); // NOI18N
-        Button4.setMaximumSize(new java.awt.Dimension(100, 100));
-        Button4.setMinimumSize(new java.awt.Dimension(100, 100));
-        Button4.setPreferredSize(new java.awt.Dimension(100, 100));
-        Button4.addActionListener(new java.awt.event.ActionListener() {
+        Card4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/memorygame/cards.jpg"))); // NOI18N
+        Card4.setMaximumSize(new java.awt.Dimension(100, 100));
+        Card4.setMinimumSize(new java.awt.Dimension(100, 100));
+        Card4.setPreferredSize(new java.awt.Dimension(100, 100));
+        Card4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Button4ActionPerformed(evt);
+                Card4ActionPerformed(evt);
             }
         });
 
-        javax.swing.GroupLayout Kleurtjes4Layout = new javax.swing.GroupLayout(Kleurtjes4);
-        Kleurtjes4.setLayout(Kleurtjes4Layout);
-        Kleurtjes4Layout.setHorizontalGroup(
-            Kleurtjes4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Button4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        javax.swing.GroupLayout CardColor4Layout = new javax.swing.GroupLayout(CardColor4);
+        CardColor4.setLayout(CardColor4Layout);
+        CardColor4Layout.setHorizontalGroup(
+            CardColor4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(Card4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
-        Kleurtjes4Layout.setVerticalGroup(
-            Kleurtjes4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Button4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        CardColor4Layout.setVerticalGroup(
+            CardColor4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(Card4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
-        Kleurtjes5.setBackground(new java.awt.Color(255, 153, 153));
+        CardColor5.setBackground(new java.awt.Color(255, 153, 153));
 
-        Button5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/memorygame/cards.jpg"))); // NOI18N
-        Button5.setMaximumSize(new java.awt.Dimension(100, 100));
-        Button5.setMinimumSize(new java.awt.Dimension(100, 100));
-        Button5.setPreferredSize(new java.awt.Dimension(100, 100));
-        Button5.addActionListener(new java.awt.event.ActionListener() {
+        Card5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/memorygame/cards.jpg"))); // NOI18N
+        Card5.setMaximumSize(new java.awt.Dimension(100, 100));
+        Card5.setMinimumSize(new java.awt.Dimension(100, 100));
+        Card5.setPreferredSize(new java.awt.Dimension(100, 100));
+        Card5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Button5ActionPerformed(evt);
+                Card5ActionPerformed(evt);
             }
         });
 
-        javax.swing.GroupLayout Kleurtjes5Layout = new javax.swing.GroupLayout(Kleurtjes5);
-        Kleurtjes5.setLayout(Kleurtjes5Layout);
-        Kleurtjes5Layout.setHorizontalGroup(
-            Kleurtjes5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Button5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        javax.swing.GroupLayout CardColor5Layout = new javax.swing.GroupLayout(CardColor5);
+        CardColor5.setLayout(CardColor5Layout);
+        CardColor5Layout.setHorizontalGroup(
+            CardColor5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(Card5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
-        Kleurtjes5Layout.setVerticalGroup(
-            Kleurtjes5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Button5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        CardColor5Layout.setVerticalGroup(
+            CardColor5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(Card5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
-        Kleurtjes6.setBackground(new java.awt.Color(255, 153, 153));
+        CardColor6.setBackground(new java.awt.Color(255, 153, 153));
 
-        Button6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/memorygame/cards.jpg"))); // NOI18N
-        Button6.setMaximumSize(new java.awt.Dimension(100, 100));
-        Button6.setMinimumSize(new java.awt.Dimension(100, 100));
-        Button6.setPreferredSize(new java.awt.Dimension(100, 100));
-        Button6.addActionListener(new java.awt.event.ActionListener() {
+        Card6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/memorygame/cards.jpg"))); // NOI18N
+        Card6.setMaximumSize(new java.awt.Dimension(100, 100));
+        Card6.setMinimumSize(new java.awt.Dimension(100, 100));
+        Card6.setPreferredSize(new java.awt.Dimension(100, 100));
+        Card6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Button6ActionPerformed(evt);
+                Card6ActionPerformed(evt);
             }
         });
 
-        javax.swing.GroupLayout Kleurtjes6Layout = new javax.swing.GroupLayout(Kleurtjes6);
-        Kleurtjes6.setLayout(Kleurtjes6Layout);
-        Kleurtjes6Layout.setHorizontalGroup(
-            Kleurtjes6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Button6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        javax.swing.GroupLayout CardColor6Layout = new javax.swing.GroupLayout(CardColor6);
+        CardColor6.setLayout(CardColor6Layout);
+        CardColor6Layout.setHorizontalGroup(
+            CardColor6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(Card6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
-        Kleurtjes6Layout.setVerticalGroup(
-            Kleurtjes6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Button6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        CardColor6Layout.setVerticalGroup(
+            CardColor6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(Card6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
-        Kleurtjes7.setBackground(new java.awt.Color(255, 153, 153));
+        CardColor7.setBackground(new java.awt.Color(255, 153, 153));
 
-        Button7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/memorygame/cards.jpg"))); // NOI18N
-        Button7.setMaximumSize(new java.awt.Dimension(100, 100));
-        Button7.setMinimumSize(new java.awt.Dimension(100, 100));
-        Button7.setPreferredSize(new java.awt.Dimension(100, 100));
-        Button7.addActionListener(new java.awt.event.ActionListener() {
+        Card7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/memorygame/cards.jpg"))); // NOI18N
+        Card7.setMaximumSize(new java.awt.Dimension(100, 100));
+        Card7.setMinimumSize(new java.awt.Dimension(100, 100));
+        Card7.setPreferredSize(new java.awt.Dimension(100, 100));
+        Card7.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Button7ActionPerformed(evt);
+                Card7ActionPerformed(evt);
             }
         });
 
-        javax.swing.GroupLayout Kleurtjes7Layout = new javax.swing.GroupLayout(Kleurtjes7);
-        Kleurtjes7.setLayout(Kleurtjes7Layout);
-        Kleurtjes7Layout.setHorizontalGroup(
-            Kleurtjes7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Button7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        javax.swing.GroupLayout CardColor7Layout = new javax.swing.GroupLayout(CardColor7);
+        CardColor7.setLayout(CardColor7Layout);
+        CardColor7Layout.setHorizontalGroup(
+            CardColor7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(Card7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
-        Kleurtjes7Layout.setVerticalGroup(
-            Kleurtjes7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Button7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        CardColor7Layout.setVerticalGroup(
+            CardColor7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(Card7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
-        Kleurtjes8.setBackground(new java.awt.Color(255, 153, 153));
+        CardColor8.setBackground(new java.awt.Color(255, 153, 153));
 
-        Button8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/memorygame/cards.jpg"))); // NOI18N
-        Button8.setMaximumSize(new java.awt.Dimension(100, 100));
-        Button8.setMinimumSize(new java.awt.Dimension(100, 100));
-        Button8.setPreferredSize(new java.awt.Dimension(100, 100));
-        Button8.addActionListener(new java.awt.event.ActionListener() {
+        Card8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/memorygame/cards.jpg"))); // NOI18N
+        Card8.setMaximumSize(new java.awt.Dimension(100, 100));
+        Card8.setMinimumSize(new java.awt.Dimension(100, 100));
+        Card8.setPreferredSize(new java.awt.Dimension(100, 100));
+        Card8.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Button8ActionPerformed(evt);
+                Card8ActionPerformed(evt);
             }
         });
 
-        javax.swing.GroupLayout Kleurtjes8Layout = new javax.swing.GroupLayout(Kleurtjes8);
-        Kleurtjes8.setLayout(Kleurtjes8Layout);
-        Kleurtjes8Layout.setHorizontalGroup(
-            Kleurtjes8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Button8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        javax.swing.GroupLayout CardColor8Layout = new javax.swing.GroupLayout(CardColor8);
+        CardColor8.setLayout(CardColor8Layout);
+        CardColor8Layout.setHorizontalGroup(
+            CardColor8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(Card8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
-        Kleurtjes8Layout.setVerticalGroup(
-            Kleurtjes8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Button8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        CardColor8Layout.setVerticalGroup(
+            CardColor8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(Card8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
-        Kleurtjes9.setBackground(new java.awt.Color(255, 153, 153));
+        CardColor9.setBackground(new java.awt.Color(255, 153, 153));
 
-        Button9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/memorygame/cards.jpg"))); // NOI18N
-        Button9.setMaximumSize(new java.awt.Dimension(100, 100));
-        Button9.setMinimumSize(new java.awt.Dimension(100, 100));
-        Button9.setPreferredSize(new java.awt.Dimension(100, 100));
-        Button9.addActionListener(new java.awt.event.ActionListener() {
+        Card9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/memorygame/cards.jpg"))); // NOI18N
+        Card9.setMaximumSize(new java.awt.Dimension(100, 100));
+        Card9.setMinimumSize(new java.awt.Dimension(100, 100));
+        Card9.setPreferredSize(new java.awt.Dimension(100, 100));
+        Card9.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Button9ActionPerformed(evt);
+                Card9ActionPerformed(evt);
             }
         });
 
-        javax.swing.GroupLayout Kleurtjes9Layout = new javax.swing.GroupLayout(Kleurtjes9);
-        Kleurtjes9.setLayout(Kleurtjes9Layout);
-        Kleurtjes9Layout.setHorizontalGroup(
-            Kleurtjes9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Button9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        javax.swing.GroupLayout CardColor9Layout = new javax.swing.GroupLayout(CardColor9);
+        CardColor9.setLayout(CardColor9Layout);
+        CardColor9Layout.setHorizontalGroup(
+            CardColor9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(Card9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
-        Kleurtjes9Layout.setVerticalGroup(
-            Kleurtjes9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Button9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        CardColor9Layout.setVerticalGroup(
+            CardColor9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(Card9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
-        Kleurtjes10.setBackground(new java.awt.Color(255, 153, 153));
+        CardColor10.setBackground(new java.awt.Color(255, 153, 153));
 
-        Button10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/memorygame/cards.jpg"))); // NOI18N
-        Button10.setMaximumSize(new java.awt.Dimension(100, 100));
-        Button10.setMinimumSize(new java.awt.Dimension(100, 100));
-        Button10.setPreferredSize(new java.awt.Dimension(100, 100));
-        Button10.addActionListener(new java.awt.event.ActionListener() {
+        Card10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/memorygame/cards.jpg"))); // NOI18N
+        Card10.setMaximumSize(new java.awt.Dimension(100, 100));
+        Card10.setMinimumSize(new java.awt.Dimension(100, 100));
+        Card10.setPreferredSize(new java.awt.Dimension(100, 100));
+        Card10.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Button10ActionPerformed(evt);
+                Card10ActionPerformed(evt);
             }
         });
 
-        javax.swing.GroupLayout Kleurtjes10Layout = new javax.swing.GroupLayout(Kleurtjes10);
-        Kleurtjes10.setLayout(Kleurtjes10Layout);
-        Kleurtjes10Layout.setHorizontalGroup(
-            Kleurtjes10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Button10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        javax.swing.GroupLayout CardColor10Layout = new javax.swing.GroupLayout(CardColor10);
+        CardColor10.setLayout(CardColor10Layout);
+        CardColor10Layout.setHorizontalGroup(
+            CardColor10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(Card10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
-        Kleurtjes10Layout.setVerticalGroup(
-            Kleurtjes10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Button10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        CardColor10Layout.setVerticalGroup(
+            CardColor10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(Card10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
-        Kleurtjes11.setBackground(new java.awt.Color(255, 153, 153));
+        CardColor11.setBackground(new java.awt.Color(255, 153, 153));
 
-        Button11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/memorygame/cards.jpg"))); // NOI18N
-        Button11.setMaximumSize(new java.awt.Dimension(100, 100));
-        Button11.setMinimumSize(new java.awt.Dimension(100, 100));
-        Button11.setPreferredSize(new java.awt.Dimension(100, 100));
-        Button11.addActionListener(new java.awt.event.ActionListener() {
+        Card11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/memorygame/cards.jpg"))); // NOI18N
+        Card11.setMaximumSize(new java.awt.Dimension(100, 100));
+        Card11.setMinimumSize(new java.awt.Dimension(100, 100));
+        Card11.setPreferredSize(new java.awt.Dimension(100, 100));
+        Card11.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Button11ActionPerformed(evt);
+                Card11ActionPerformed(evt);
             }
         });
 
-        javax.swing.GroupLayout Kleurtjes11Layout = new javax.swing.GroupLayout(Kleurtjes11);
-        Kleurtjes11.setLayout(Kleurtjes11Layout);
-        Kleurtjes11Layout.setHorizontalGroup(
-            Kleurtjes11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Button11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        javax.swing.GroupLayout CardColor11Layout = new javax.swing.GroupLayout(CardColor11);
+        CardColor11.setLayout(CardColor11Layout);
+        CardColor11Layout.setHorizontalGroup(
+            CardColor11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(Card11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
-        Kleurtjes11Layout.setVerticalGroup(
-            Kleurtjes11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Button11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        CardColor11Layout.setVerticalGroup(
+            CardColor11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(Card11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
-        Kleurtjes12.setBackground(new java.awt.Color(255, 153, 153));
+        CardColor12.setBackground(new java.awt.Color(255, 153, 153));
 
-        Button12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/memorygame/cards.jpg"))); // NOI18N
-        Button12.setMaximumSize(new java.awt.Dimension(100, 100));
-        Button12.setMinimumSize(new java.awt.Dimension(100, 100));
-        Button12.setPreferredSize(new java.awt.Dimension(100, 100));
-        Button12.addActionListener(new java.awt.event.ActionListener() {
+        Card12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/memorygame/cards.jpg"))); // NOI18N
+        Card12.setMaximumSize(new java.awt.Dimension(100, 100));
+        Card12.setMinimumSize(new java.awt.Dimension(100, 100));
+        Card12.setPreferredSize(new java.awt.Dimension(100, 100));
+        Card12.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Button12ActionPerformed(evt);
+                Card12ActionPerformed(evt);
             }
         });
 
-        javax.swing.GroupLayout Kleurtjes12Layout = new javax.swing.GroupLayout(Kleurtjes12);
-        Kleurtjes12.setLayout(Kleurtjes12Layout);
-        Kleurtjes12Layout.setHorizontalGroup(
-            Kleurtjes12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Button12, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        javax.swing.GroupLayout CardColor12Layout = new javax.swing.GroupLayout(CardColor12);
+        CardColor12.setLayout(CardColor12Layout);
+        CardColor12Layout.setHorizontalGroup(
+            CardColor12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(Card12, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
-        Kleurtjes12Layout.setVerticalGroup(
-            Kleurtjes12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Button12, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        CardColor12Layout.setVerticalGroup(
+            CardColor12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(Card12, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
-        Kleurtjes13.setBackground(new java.awt.Color(255, 153, 153));
+        CardColor13.setBackground(new java.awt.Color(255, 153, 153));
 
-        Button13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/memorygame/cards.jpg"))); // NOI18N
-        Button13.setMaximumSize(new java.awt.Dimension(100, 100));
-        Button13.setMinimumSize(new java.awt.Dimension(100, 100));
-        Button13.setPreferredSize(new java.awt.Dimension(100, 100));
-        Button13.addActionListener(new java.awt.event.ActionListener() {
+        Card13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/memorygame/cards.jpg"))); // NOI18N
+        Card13.setMaximumSize(new java.awt.Dimension(100, 100));
+        Card13.setMinimumSize(new java.awt.Dimension(100, 100));
+        Card13.setPreferredSize(new java.awt.Dimension(100, 100));
+        Card13.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Button13ActionPerformed(evt);
+                Card13ActionPerformed(evt);
             }
         });
 
-        javax.swing.GroupLayout Kleurtjes13Layout = new javax.swing.GroupLayout(Kleurtjes13);
-        Kleurtjes13.setLayout(Kleurtjes13Layout);
-        Kleurtjes13Layout.setHorizontalGroup(
-            Kleurtjes13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Button13, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        javax.swing.GroupLayout CardColor13Layout = new javax.swing.GroupLayout(CardColor13);
+        CardColor13.setLayout(CardColor13Layout);
+        CardColor13Layout.setHorizontalGroup(
+            CardColor13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(Card13, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
-        Kleurtjes13Layout.setVerticalGroup(
-            Kleurtjes13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Button13, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        CardColor13Layout.setVerticalGroup(
+            CardColor13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(Card13, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
-        Kleurtjes14.setBackground(new java.awt.Color(255, 153, 153));
+        CardColor14.setBackground(new java.awt.Color(255, 153, 153));
 
-        Button14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/memorygame/cards.jpg"))); // NOI18N
-        Button14.setMaximumSize(new java.awt.Dimension(100, 100));
-        Button14.setMinimumSize(new java.awt.Dimension(100, 100));
-        Button14.setPreferredSize(new java.awt.Dimension(100, 100));
-        Button14.addActionListener(new java.awt.event.ActionListener() {
+        Card14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/memorygame/cards.jpg"))); // NOI18N
+        Card14.setMaximumSize(new java.awt.Dimension(100, 100));
+        Card14.setMinimumSize(new java.awt.Dimension(100, 100));
+        Card14.setPreferredSize(new java.awt.Dimension(100, 100));
+        Card14.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Button14ActionPerformed(evt);
+                Card14ActionPerformed(evt);
             }
         });
 
-        javax.swing.GroupLayout Kleurtjes14Layout = new javax.swing.GroupLayout(Kleurtjes14);
-        Kleurtjes14.setLayout(Kleurtjes14Layout);
-        Kleurtjes14Layout.setHorizontalGroup(
-            Kleurtjes14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Button14, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        javax.swing.GroupLayout CardColor14Layout = new javax.swing.GroupLayout(CardColor14);
+        CardColor14.setLayout(CardColor14Layout);
+        CardColor14Layout.setHorizontalGroup(
+            CardColor14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(Card14, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
-        Kleurtjes14Layout.setVerticalGroup(
-            Kleurtjes14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Button14, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        CardColor14Layout.setVerticalGroup(
+            CardColor14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(Card14, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
-        Kleurtjes15.setBackground(new java.awt.Color(255, 153, 153));
+        CardColor15.setBackground(new java.awt.Color(255, 153, 153));
 
-        Button15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/memorygame/cards.jpg"))); // NOI18N
-        Button15.setMaximumSize(new java.awt.Dimension(100, 100));
-        Button15.setMinimumSize(new java.awt.Dimension(100, 100));
-        Button15.setPreferredSize(new java.awt.Dimension(100, 100));
-        Button15.addActionListener(new java.awt.event.ActionListener() {
+        Card15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/memorygame/cards.jpg"))); // NOI18N
+        Card15.setMaximumSize(new java.awt.Dimension(100, 100));
+        Card15.setMinimumSize(new java.awt.Dimension(100, 100));
+        Card15.setPreferredSize(new java.awt.Dimension(100, 100));
+        Card15.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Button15ActionPerformed(evt);
+                Card15ActionPerformed(evt);
             }
         });
 
-        javax.swing.GroupLayout Kleurtjes15Layout = new javax.swing.GroupLayout(Kleurtjes15);
-        Kleurtjes15.setLayout(Kleurtjes15Layout);
-        Kleurtjes15Layout.setHorizontalGroup(
-            Kleurtjes15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Button15, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        javax.swing.GroupLayout CardColor15Layout = new javax.swing.GroupLayout(CardColor15);
+        CardColor15.setLayout(CardColor15Layout);
+        CardColor15Layout.setHorizontalGroup(
+            CardColor15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(Card15, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
-        Kleurtjes15Layout.setVerticalGroup(
-            Kleurtjes15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Button15, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        CardColor15Layout.setVerticalGroup(
+            CardColor15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(Card15, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
-        Kleurtjes16.setBackground(new java.awt.Color(255, 153, 153));
+        CardColor16.setBackground(new java.awt.Color(255, 153, 153));
 
-        Button16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/memorygame/cards.jpg"))); // NOI18N
-        Button16.setMaximumSize(new java.awt.Dimension(100, 100));
-        Button16.setMinimumSize(new java.awt.Dimension(100, 100));
-        Button16.setPreferredSize(new java.awt.Dimension(100, 100));
-        Button16.addActionListener(new java.awt.event.ActionListener() {
+        Card16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/memorygame/cards.jpg"))); // NOI18N
+        Card16.setMaximumSize(new java.awt.Dimension(100, 100));
+        Card16.setMinimumSize(new java.awt.Dimension(100, 100));
+        Card16.setPreferredSize(new java.awt.Dimension(100, 100));
+        Card16.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Button16ActionPerformed(evt);
+                Card16ActionPerformed(evt);
             }
         });
 
-        javax.swing.GroupLayout Kleurtjes16Layout = new javax.swing.GroupLayout(Kleurtjes16);
-        Kleurtjes16.setLayout(Kleurtjes16Layout);
-        Kleurtjes16Layout.setHorizontalGroup(
-            Kleurtjes16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Button16, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        javax.swing.GroupLayout CardColor16Layout = new javax.swing.GroupLayout(CardColor16);
+        CardColor16.setLayout(CardColor16Layout);
+        CardColor16Layout.setHorizontalGroup(
+            CardColor16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(Card16, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
-        Kleurtjes16Layout.setVerticalGroup(
-            Kleurtjes16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Button16, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        CardColor16Layout.setVerticalGroup(
+            CardColor16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(Card16, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
-        label1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        label1.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
-        label1.setText("Times Clicked:");
+        TimesClicked.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        TimesClicked.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        TimesClicked.setText("Times Clicked:");
 
-        jLabel1.setText("Score");
-        jLabel1.setMaximumSize(new java.awt.Dimension(83, 20));
-        jLabel1.setMinimumSize(new java.awt.Dimension(83, 20));
-        jLabel1.setPreferredSize(new java.awt.Dimension(83, 20));
+        Score.setText("Score");
+        Score.setMaximumSize(new java.awt.Dimension(83, 20));
+        Score.setMinimumSize(new java.awt.Dimension(83, 20));
+        Score.setPreferredSize(new java.awt.Dimension(83, 20));
 
-        jLabel2.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
-        jLabel2.setText("High Score:");
+        Highscore1.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        Highscore1.setText("High Score:");
 
-        txt_highscore.setText("highscore");
+        Highscore.setText("highscore");
 
         Finish.setText("Finish");
         Finish.addActionListener(new java.awt.event.ActionListener() {
@@ -546,50 +544,50 @@ public class Main extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(Kleurtjes1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(CardColor1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Kleurtjes2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(CardColor2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Kleurtjes3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(CardColor3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Kleurtjes4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(CardColor4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(Kleurtjes13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(CardColor13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Kleurtjes14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(CardColor14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Kleurtjes15, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(CardColor15, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Kleurtjes16, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(CardColor16, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(Kleurtjes9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(CardColor9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(Kleurtjes10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(CardColor10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(Kleurtjes11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(CardColor11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(Kleurtjes12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(CardColor12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(Kleurtjes5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(CardColor5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(Kleurtjes6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(CardColor6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(Kleurtjes7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(CardColor7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(Kleurtjes8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(CardColor8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(Finish)
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(label1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel2))
+                                    .addComponent(TimesClicked, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(Highscore1))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(txt_highscore)
-                                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))))
+                                    .addComponent(Highscore)
+                                    .addComponent(Score, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))))
                 .addContainerGap(38, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -600,322 +598,322 @@ public class Main extends javax.swing.JFrame {
                     .addComponent(Finish)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(Kleurtjes4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(Kleurtjes3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(Kleurtjes2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(Kleurtjes1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(CardColor4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(CardColor3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(CardColor2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(CardColor1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(Kleurtjes5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(Kleurtjes6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(Kleurtjes7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(Kleurtjes8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(CardColor5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(CardColor6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(CardColor7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(CardColor8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(Kleurtjes9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(Kleurtjes10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(Kleurtjes11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(Kleurtjes12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addComponent(CardColor9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(CardColor10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(CardColor11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(CardColor12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(95, 95, 95)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(label1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(TimesClicked, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(Score, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(21, 21, 21)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jLabel2)
-                                    .addComponent(txt_highscore))))
+                                    .addComponent(Highscore1)
+                                    .addComponent(Highscore))))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(Kleurtjes13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(Kleurtjes14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(Kleurtjes15, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(Kleurtjes16, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(CardColor13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(CardColor14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(CardColor15, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(CardColor16, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(32, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void Button3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Button3ActionPerformed
+    private void Card3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Card3ActionPerformed
         // TODO add your handling code here:
-        Button3.setContentAreaFilled(false);
-        Button3.setBorderPainted(false);
-        Button3.setIcon(null);
+        Card3.setContentAreaFilled(false);
+        Card3.setBorderPainted(false);
+        Card3.setIcon(null);
         if (timesclicked % 2 == 0) {
             ColorClicked[1] = twodArray[0][2];
-            ButtonArray[1] = Button3;
+            CardArray[1] = Card3;
             timer.start();
         } else {
             ColorClicked[0] = twodArray[0][2];
-            ButtonArray[0] = Button3;
+            CardArray[0] = Card3;
             timesclicked++;
         }
 
-        jLabel1.setText(Integer.toString(timesclicked - 1));
+        Score.setText(Integer.toString(timesclicked - 1));
 
-    }//GEN-LAST:event_Button3ActionPerformed
+    }//GEN-LAST:event_Card3ActionPerformed
 
-    private void Button4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Button4ActionPerformed
+    private void Card4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Card4ActionPerformed
         // TODO add your handling code here:
-        Button4.setContentAreaFilled(false);
-        Button4.setBorderPainted(false);
-        Button4.setIcon(null);
+        Card4.setContentAreaFilled(false);
+        Card4.setBorderPainted(false);
+        Card4.setIcon(null);
         if (timesclicked % 2 == 0) {
             ColorClicked[1] = twodArray[0][3];
-            ButtonArray[1] = Button4;
+            CardArray[1] = Card4;
             timer.start();
         } else {
             ColorClicked[0] = twodArray[0][3];
-            ButtonArray[0] = Button4;
+            CardArray[0] = Card4;
             timesclicked++;
         }
 
-        jLabel1.setText(Integer.toString(timesclicked - 1));
-    }//GEN-LAST:event_Button4ActionPerformed
+        Score.setText(Integer.toString(timesclicked - 1));
+    }//GEN-LAST:event_Card4ActionPerformed
 
-    private void Button5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Button5ActionPerformed
+    private void Card5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Card5ActionPerformed
         // TODO add your handling code here:
-        Button5.setContentAreaFilled(false);
-        Button5.setBorderPainted(false);
-        Button5.setIcon(null);
+        Card5.setContentAreaFilled(false);
+        Card5.setBorderPainted(false);
+        Card5.setIcon(null);
         if (timesclicked % 2 == 0) {
             ColorClicked[1] = twodArray[1][0];
-            ButtonArray[1] = Button5;
+            CardArray[1] = Card5;
             timer.start();
         } else {
             ColorClicked[0] = twodArray[1][0];
-            ButtonArray[0] = Button5;
+            CardArray[0] = Card5;
             timesclicked++;
         }
 
-        jLabel1.setText(Integer.toString(timesclicked - 1));
-    }//GEN-LAST:event_Button5ActionPerformed
+        Score.setText(Integer.toString(timesclicked - 1));
+    }//GEN-LAST:event_Card5ActionPerformed
 
-    private void Button6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Button6ActionPerformed
+    private void Card6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Card6ActionPerformed
         // TODO add your handling code here:
-        Button6.setContentAreaFilled(false);
-        Button6.setBorderPainted(false);
-        Button6.setIcon(null);
+        Card6.setContentAreaFilled(false);
+        Card6.setBorderPainted(false);
+        Card6.setIcon(null);
         if (timesclicked % 2 == 0) {
             ColorClicked[1] = twodArray[1][1];
-            ButtonArray[1] = Button6;
+            CardArray[1] = Card6;
             timer.start();
         } else {
             ColorClicked[0] = twodArray[1][1];
-            ButtonArray[0] = Button6;
+            CardArray[0] = Card6;
             timesclicked++;
         }
 
-        jLabel1.setText(Integer.toString(timesclicked - 1));
-    }//GEN-LAST:event_Button6ActionPerformed
+        Score.setText(Integer.toString(timesclicked - 1));
+    }//GEN-LAST:event_Card6ActionPerformed
 
-    private void Button7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Button7ActionPerformed
+    private void Card7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Card7ActionPerformed
         // TODO add your handling code here:
-        Button7.setContentAreaFilled(false);
-        Button7.setBorderPainted(false);
-        Button7.setIcon(null);
+        Card7.setContentAreaFilled(false);
+        Card7.setBorderPainted(false);
+        Card7.setIcon(null);
         if (timesclicked % 2 == 0) {
             ColorClicked[1] = twodArray[1][2];
-            ButtonArray[1] = Button7;
+            CardArray[1] = Card7;
             timer.start();
         } else {
             ColorClicked[0] = twodArray[1][2];
-            ButtonArray[0] = Button7;
+            CardArray[0] = Card7;
             timesclicked++;
         }
 
-        jLabel1.setText(Integer.toString(timesclicked - 1));
-    }//GEN-LAST:event_Button7ActionPerformed
+        Score.setText(Integer.toString(timesclicked - 1));
+    }//GEN-LAST:event_Card7ActionPerformed
 
-    private void Button8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Button8ActionPerformed
+    private void Card8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Card8ActionPerformed
         // TODO add your handling code here:
-        Button8.setContentAreaFilled(false);
-        Button8.setBorderPainted(false);
-        Button8.setIcon(null);
+        Card8.setContentAreaFilled(false);
+        Card8.setBorderPainted(false);
+        Card8.setIcon(null);
         if (timesclicked % 2 == 0) {
             ColorClicked[1] = twodArray[1][3];
-            ButtonArray[1] = Button8;
+            CardArray[1] = Card8;
             timer.start();
         } else {
             ColorClicked[0] = twodArray[1][3];
-            ButtonArray[0] = Button8;
+            CardArray[0] = Card8;
             timesclicked++;
         }
-        jLabel1.setText(Integer.toString(timesclicked - 1));
-    }//GEN-LAST:event_Button8ActionPerformed
+        Score.setText(Integer.toString(timesclicked - 1));
+    }//GEN-LAST:event_Card8ActionPerformed
 
-    private void Button9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Button9ActionPerformed
+    private void Card9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Card9ActionPerformed
         // TODO add your handling code here:Button3.setContentAreaFilled(false);
-        Button9.setContentAreaFilled(false);
-        Button9.setBorderPainted(false);
-        Button9.setIcon(null);
+        Card9.setContentAreaFilled(false);
+        Card9.setBorderPainted(false);
+        Card9.setIcon(null);
         if (timesclicked % 2 == 0) {
             ColorClicked[1] = twodArray[2][0];
-            ButtonArray[1] = Button9;
+            CardArray[1] = Card9;
             timer.start();
         } else {
             ColorClicked[0] = twodArray[2][0];
-            ButtonArray[0] = Button9;
+            CardArray[0] = Card9;
             timesclicked++;
         }
-        jLabel1.setText(Integer.toString(timesclicked - 1));
-    }//GEN-LAST:event_Button9ActionPerformed
+        Score.setText(Integer.toString(timesclicked - 1));
+    }//GEN-LAST:event_Card9ActionPerformed
 
-    private void Button10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Button10ActionPerformed
+    private void Card10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Card10ActionPerformed
         // TODO add your handling code here: 
-        Button10.setContentAreaFilled(false);
-        Button10.setBorderPainted(false);
-        Button10.setIcon(null);
+        Card10.setContentAreaFilled(false);
+        Card10.setBorderPainted(false);
+        Card10.setIcon(null);
         if (timesclicked % 2 == 0) {
             ColorClicked[1] = twodArray[2][1];
-            ButtonArray[1] = Button10;
+            CardArray[1] = Card10;
             timer.start();
         } else {
             ColorClicked[0] = twodArray[2][1];
-            ButtonArray[0] = Button10;
+            CardArray[0] = Card10;
             timesclicked++;
         }
-        jLabel1.setText(Integer.toString(timesclicked - 1));
-    }//GEN-LAST:event_Button10ActionPerformed
+        Score.setText(Integer.toString(timesclicked - 1));
+    }//GEN-LAST:event_Card10ActionPerformed
 
-    private void Button11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Button11ActionPerformed
+    private void Card11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Card11ActionPerformed
         // TODO add your handling code here:
-        Button11.setContentAreaFilled(false);
-        Button11.setBorderPainted(false);
-           Button11.setIcon(null);
+        Card11.setContentAreaFilled(false);
+        Card11.setBorderPainted(false);
+        Card11.setIcon(null);
         if (timesclicked % 2 == 0) {
             ColorClicked[1] = twodArray[2][2];
-            ButtonArray[1] = Button11;
+            CardArray[1] = Card11;
             timer.start();
         } else {
             ColorClicked[0] = twodArray[2][2];
-            ButtonArray[0] = Button11;
+            CardArray[0] = Card11;
             timesclicked++;
         }
-        jLabel1.setText(Integer.toString(timesclicked - 1));
-    }//GEN-LAST:event_Button11ActionPerformed
+        Score.setText(Integer.toString(timesclicked - 1));
+    }//GEN-LAST:event_Card11ActionPerformed
 
-    private void Button12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Button12ActionPerformed
+    private void Card12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Card12ActionPerformed
         // TODO add your handling code here:
-        Button12.setContentAreaFilled(false);
-        Button12.setBorderPainted(false);
-        Button12.setIcon(null);
+        Card12.setContentAreaFilled(false);
+        Card12.setBorderPainted(false);
+        Card12.setIcon(null);
         if (timesclicked % 2 == 0) {
             ColorClicked[1] = twodArray[2][3];
-            ButtonArray[1] = Button12;
+            CardArray[1] = Card12;
             timer.start();
         } else {
             ColorClicked[0] = twodArray[2][3];
-            ButtonArray[0] = Button12;
+            CardArray[0] = Card12;
             timesclicked++;
         }
-        jLabel1.setText(Integer.toString(timesclicked - 1));
-    }//GEN-LAST:event_Button12ActionPerformed
+        Score.setText(Integer.toString(timesclicked - 1));
+    }//GEN-LAST:event_Card12ActionPerformed
 
-    private void Button13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Button13ActionPerformed
+    private void Card13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Card13ActionPerformed
         // TODO add your handling code here:
-        Button13.setContentAreaFilled(false);
-        Button13.setBorderPainted(false);
-        Button13.setIcon(null);
+        Card13.setContentAreaFilled(false);
+        Card13.setBorderPainted(false);
+        Card13.setIcon(null);
         if (timesclicked % 2 == 0) {
             ColorClicked[1] = twodArray[3][0];
-            ButtonArray[1] = Button13;
+            CardArray[1] = Card13;
             timer.start();
         } else {
             ColorClicked[0] = twodArray[3][0];
-            ButtonArray[0] = Button13;
+            CardArray[0] = Card13;
             timesclicked++;
         }
-        jLabel1.setText(Integer.toString(timesclicked - 1));
-    }//GEN-LAST:event_Button13ActionPerformed
+        Score.setText(Integer.toString(timesclicked - 1));
+    }//GEN-LAST:event_Card13ActionPerformed
 
-    private void Button14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Button14ActionPerformed
+    private void Card14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Card14ActionPerformed
         // TODO add your handling code here:
-        Button14.setContentAreaFilled(false);
-        Button14.setBorderPainted(false);
-        Button14.setIcon(null);
+        Card14.setContentAreaFilled(false);
+        Card14.setBorderPainted(false);
+        Card14.setIcon(null);
         if (timesclicked % 2 == 0) {
             ColorClicked[1] = twodArray[3][1];
-            ButtonArray[1] = Button14;
+            CardArray[1] = Card14;
             timer.start();
         } else {
             ColorClicked[0] = twodArray[3][1];
-            ButtonArray[0] = Button14;
+            CardArray[0] = Card14;
             timesclicked++;
         }
-        jLabel1.setText(Integer.toString(timesclicked - 1));
-    }//GEN-LAST:event_Button14ActionPerformed
+        Score.setText(Integer.toString(timesclicked - 1));
+    }//GEN-LAST:event_Card14ActionPerformed
 
-    private void Button15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Button15ActionPerformed
+    private void Card15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Card15ActionPerformed
         // TODO add your handling code here:
-        Button15.setContentAreaFilled(false);
-        Button15.setBorderPainted(false);
-        Button15.setIcon(null);
+        Card15.setContentAreaFilled(false);
+        Card15.setBorderPainted(false);
+        Card15.setIcon(null);
         if (timesclicked % 2 == 0) {
             ColorClicked[1] = twodArray[3][2];
-            ButtonArray[1] = Button15;
+            CardArray[1] = Card15;
             timer.start();
         } else {
             ColorClicked[0] = twodArray[3][2];
-            ButtonArray[0] = Button15;
+            CardArray[0] = Card15;
             timesclicked++;
         }
-        jLabel1.setText(Integer.toString(timesclicked - 1));
-    }//GEN-LAST:event_Button15ActionPerformed
+        Score.setText(Integer.toString(timesclicked - 1));
+    }//GEN-LAST:event_Card15ActionPerformed
 
-    private void Button2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Button2ActionPerformed
+    private void Card2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Card2ActionPerformed
         // TODO add your handling code here:
-        Button2.setContentAreaFilled(false);
-        Button2.setBorderPainted(false);
-        Button2.setIcon(null);
+        Card2.setContentAreaFilled(false);
+        Card2.setBorderPainted(false);
+        Card2.setIcon(null);
         if (timesclicked % 2 == 0) {
             ColorClicked[1] = twodArray[0][1];
-            ButtonArray[1] = Button2;
+            CardArray[1] = Card2;
             timer.start();
         } else {
             ColorClicked[0] = twodArray[0][1];
-            ButtonArray[0] = Button2;
+            CardArray[0] = Card2;
             timesclicked++;
         }
-        jLabel1.setText(Integer.toString(timesclicked - 1));
-    }//GEN-LAST:event_Button2ActionPerformed
+        Score.setText(Integer.toString(timesclicked - 1));
+    }//GEN-LAST:event_Card2ActionPerformed
 
-    private void Button1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Button1ActionPerformed
+    private void Card1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Card1ActionPerformed
         // TODO add your handling code here:
-        Button1.setContentAreaFilled(false);
-        Button1.setBorderPainted(false);
-        Button1.setIcon(null);
+        Card1.setContentAreaFilled(false);
+        Card1.setBorderPainted(false);
+        Card1.setIcon(null);
         if (timesclicked % 2 == 0) {
             ColorClicked[1] = twodArray[0][0];
-            ButtonArray[1] = Button1;
+            CardArray[1] = Card1;
             timer.start();
         } else {
             ColorClicked[0] = twodArray[0][0];
-            ButtonArray[0] = Button1;
+            CardArray[0] = Card1;
             timesclicked++;
         }
-        jLabel1.setText(Integer.toString(timesclicked - 1));
-    }//GEN-LAST:event_Button1ActionPerformed
+        Score.setText(Integer.toString(timesclicked - 1));
+    }//GEN-LAST:event_Card1ActionPerformed
 
-    private void Button16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Button16ActionPerformed
+    private void Card16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Card16ActionPerformed
         // TODO add your handling code here:
-        Button16.setContentAreaFilled(false);
-        Button16.setBorderPainted(false);
-           Button16.setIcon(null);
+        Card16.setContentAreaFilled(false);
+        Card16.setBorderPainted(false);
+        Card16.setIcon(null);
         if (timesclicked % 2 == 0) {
             ColorClicked[1] = twodArray[3][3];
-            ButtonArray[1] = Button16;
+            CardArray[1] = Card16;
             timer.start();
         } else {
             ColorClicked[0] = twodArray[3][3];
-            ButtonArray[0] = Button16;
+            CardArray[0] = Card16;
             timesclicked++;
         }
-        jLabel1.setText(Integer.toString(timesclicked - 1));
-    }//GEN-LAST:event_Button16ActionPerformed
+        Score.setText(Integer.toString(timesclicked - 1));
+    }//GEN-LAST:event_Card16ActionPerformed
 
     private void FinishActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FinishActionPerformed
         WriteToFile();
@@ -959,43 +957,43 @@ public class Main extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton Button1;
-    private javax.swing.JButton Button10;
-    private javax.swing.JButton Button11;
-    private javax.swing.JButton Button12;
-    private javax.swing.JButton Button13;
-    private javax.swing.JButton Button14;
-    private javax.swing.JButton Button15;
-    private javax.swing.JButton Button16;
-    private javax.swing.JButton Button2;
-    private javax.swing.JButton Button3;
-    private javax.swing.JButton Button4;
-    private javax.swing.JButton Button5;
-    private javax.swing.JButton Button6;
-    private javax.swing.JButton Button7;
-    private javax.swing.JButton Button8;
-    private javax.swing.JButton Button9;
+    private javax.swing.JButton Card1;
+    private javax.swing.JButton Card10;
+    private javax.swing.JButton Card11;
+    private javax.swing.JButton Card12;
+    private javax.swing.JButton Card13;
+    private javax.swing.JButton Card14;
+    private javax.swing.JButton Card15;
+    private javax.swing.JButton Card16;
+    private javax.swing.JButton Card2;
+    private javax.swing.JButton Card3;
+    private javax.swing.JButton Card4;
+    private javax.swing.JButton Card5;
+    private javax.swing.JButton Card6;
+    private javax.swing.JButton Card7;
+    private javax.swing.JButton Card8;
+    private javax.swing.JButton Card9;
+    private javax.swing.JPanel CardColor1;
+    private javax.swing.JPanel CardColor10;
+    private javax.swing.JPanel CardColor11;
+    private javax.swing.JPanel CardColor12;
+    private javax.swing.JPanel CardColor13;
+    private javax.swing.JPanel CardColor14;
+    private javax.swing.JPanel CardColor15;
+    private javax.swing.JPanel CardColor16;
+    private javax.swing.JPanel CardColor2;
+    private javax.swing.JPanel CardColor3;
+    private javax.swing.JPanel CardColor4;
+    private javax.swing.JPanel CardColor5;
+    private javax.swing.JPanel CardColor6;
+    private javax.swing.JPanel CardColor7;
+    private javax.swing.JPanel CardColor8;
+    private javax.swing.JPanel CardColor9;
     private javax.swing.JButton Finish;
-    private javax.swing.JPanel Kleurtjes1;
-    private javax.swing.JPanel Kleurtjes10;
-    private javax.swing.JPanel Kleurtjes11;
-    private javax.swing.JPanel Kleurtjes12;
-    private javax.swing.JPanel Kleurtjes13;
-    private javax.swing.JPanel Kleurtjes14;
-    private javax.swing.JPanel Kleurtjes15;
-    private javax.swing.JPanel Kleurtjes16;
-    private javax.swing.JPanel Kleurtjes2;
-    private javax.swing.JPanel Kleurtjes3;
-    private javax.swing.JPanel Kleurtjes4;
-    private javax.swing.JPanel Kleurtjes5;
-    private javax.swing.JPanel Kleurtjes6;
-    private javax.swing.JPanel Kleurtjes7;
-    private javax.swing.JPanel Kleurtjes8;
-    private javax.swing.JPanel Kleurtjes9;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private java.awt.Label label1;
-    private javax.swing.JLabel txt_highscore;
+    private javax.swing.JLabel Highscore;
+    private javax.swing.JLabel Highscore1;
+    private javax.swing.JLabel Score;
+    private java.awt.Label TimesClicked;
     // End of variables declaration//GEN-END:variables
 
     private void ShuffelArray(Color[] colorArray) {
@@ -1023,41 +1021,41 @@ public class Main extends javax.swing.JFrame {
 
     private void SetBackground(Color[][] twodArray) {
         //set background of the Jpanels
-        Kleurtjes1.setBackground(twodArray[0][0]);
-        Kleurtjes2.setBackground(twodArray[0][1]);
-        Kleurtjes3.setBackground(twodArray[0][2]);
-        Kleurtjes4.setBackground(twodArray[0][3]);
-        Kleurtjes5.setBackground(twodArray[1][0]);
-        Kleurtjes6.setBackground(twodArray[1][1]);
-        Kleurtjes7.setBackground(twodArray[1][2]);
-        Kleurtjes8.setBackground(twodArray[1][3]);
+        CardColor1.setBackground(twodArray[0][0]);
+        CardColor2.setBackground(twodArray[0][1]);
+        CardColor3.setBackground(twodArray[0][2]);
+        CardColor4.setBackground(twodArray[0][3]);
+        CardColor5.setBackground(twodArray[1][0]);
+        CardColor6.setBackground(twodArray[1][1]);
+        CardColor7.setBackground(twodArray[1][2]);
+        CardColor8.setBackground(twodArray[1][3]);
 
-        Kleurtjes9.setBackground(twodArray[2][0]);
-        Kleurtjes10.setBackground(twodArray[2][1]);
-        Kleurtjes11.setBackground(twodArray[2][2]);
-        Kleurtjes12.setBackground(twodArray[2][3]);
-        Kleurtjes13.setBackground(twodArray[3][0]);
-        Kleurtjes14.setBackground(twodArray[3][1]);
-        Kleurtjes15.setBackground(twodArray[3][2]);
-        Kleurtjes16.setBackground(twodArray[3][3]);
+        CardColor9.setBackground(twodArray[2][0]);
+        CardColor10.setBackground(twodArray[2][1]);
+        CardColor11.setBackground(twodArray[2][2]);
+        CardColor12.setBackground(twodArray[2][3]);
+        CardColor13.setBackground(twodArray[3][0]);
+        CardColor14.setBackground(twodArray[3][1]);
+        CardColor15.setBackground(twodArray[3][2]);
+        CardColor16.setBackground(twodArray[3][3]);
     }
 
     private void CheckIfSame() {
-        //check if the color that are selected are the same
+        //check if the colors that are selected are the same
         if (ColorClicked[0] == ColorClicked[1]) {
-            ButtonArray[0].setEnabled(false);
-            ButtonArray[1].setEnabled(false);
-            Arrays.fill(ButtonArray, null);
+            CardArray[0].setEnabled(false);
+            CardArray[1].setEnabled(false);
+            Arrays.fill(CardArray, null);
             Arrays.fill(ColorClicked, null);
             timesclicked++;
         } else {
 
-            ButtonArray[0].setContentAreaFilled(true);
-            ButtonArray[0].setBorderPainted(true);
-            ButtonArray[1].setContentAreaFilled(true);
-            ButtonArray[1].setBorderPainted(true);
+            CardArray[0].setContentAreaFilled(true);
+            CardArray[0].setBorderPainted(true);
+            CardArray[1].setContentAreaFilled(true);
+            CardArray[1].setBorderPainted(true);
             setIcon();
-            Arrays.fill(ButtonArray, null);
+            Arrays.fill(CardArray, null);
             Arrays.fill(ColorClicked, null);
             timesclicked++;
         }
@@ -1106,8 +1104,8 @@ public class Main extends javax.swing.JFrame {
 
         try {
             Image img = ImageIO.read(getClass().getResource("cards.jpg"));
-            ButtonArray[0].setIcon(new ImageIcon(img));
-            ButtonArray[1].setIcon(new ImageIcon(img));
+            CardArray[0].setIcon(new ImageIcon(img));
+            CardArray[1].setIcon(new ImageIcon(img));
 
         } catch (IOException ex) {
             System.out.println("icon niet gevonden");
