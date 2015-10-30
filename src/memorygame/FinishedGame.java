@@ -6,6 +6,8 @@
 package memorygame;
 
 import java.applet.Applet;
+import java.awt.Point;
+import java.awt.Toolkit;
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
@@ -27,6 +29,11 @@ public class FinishedGame extends javax.swing.JFrame {
      */
     public FinishedGame() {
         initComponents();
+        
+        try{
+            setCursor(Toolkit.getDefaultToolkit().createCustomCursor(new ImageIcon("cursor1.png").getImage(), new Point(0,0),"custom cursor"));
+        }catch(Exception e){}
+        
         // String filename = "C:\\Documents\\GitHub\\MemoryGame\\highscore.txt";
          String filename = "highscore.txt";
          String line = null;
