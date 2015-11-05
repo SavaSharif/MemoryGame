@@ -44,6 +44,7 @@ public class Main extends javax.swing.JFrame {
     String filename = "highscore.txt";
     String line = null;
     int highscore;
+    boolean allowClick = (true);
 
     public Main() {
 
@@ -80,6 +81,8 @@ public class Main extends javax.swing.JFrame {
         timer = new Timer(500, new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 CheckIfSame();
+                allowClick = (true);
+                timer.stop();
             }
         });
 
@@ -639,280 +642,98 @@ public class Main extends javax.swing.JFrame {
 
     private void Card3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Card3ActionPerformed
         // TODO add your handling code here:
-        Card3.setContentAreaFilled(false);
-        Card3.setBorderPainted(false);
-        Card3.setIcon(null);
-        if (timesclicked % 2 == 0) {
-            ColorClicked[1] = twodArray[0][2];
-            CardArray[1] = Card3;
-            timer.start();
-        } else {
-            ColorClicked[0] = twodArray[0][2];
-            CardArray[0] = Card3;
-            timesclicked++;
-        }
+        clickOnIcon(Card3, CardColor3.getBackground());
 
-        Score.setText(Integer.toString(timesclicked - 1));
 
     }//GEN-LAST:event_Card3ActionPerformed
 
     private void Card4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Card4ActionPerformed
         // TODO add your handling code here:
-        Card4.setContentAreaFilled(false);
-        Card4.setBorderPainted(false);
-        Card4.setIcon(null);
-        if (timesclicked % 2 == 0) {
-            ColorClicked[1] = twodArray[0][3];
-            CardArray[1] = Card4;
-            timer.start();
-        } else {
-            ColorClicked[0] = twodArray[0][3];
-            CardArray[0] = Card4;
-            timesclicked++;
-        }
+        clickOnIcon(Card4, CardColor4.getBackground());
 
-        Score.setText(Integer.toString(timesclicked - 1));
     }//GEN-LAST:event_Card4ActionPerformed
 
     private void Card5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Card5ActionPerformed
         // TODO add your handling code here:
-        Card5.setContentAreaFilled(false);
-        Card5.setBorderPainted(false);
-        Card5.setIcon(null);
-        if (timesclicked % 2 == 0) {
-            ColorClicked[1] = twodArray[1][0];
-            CardArray[1] = Card5;
-            timer.start();
-        } else {
-            ColorClicked[0] = twodArray[1][0];
-            CardArray[0] = Card5;
-            timesclicked++;
-        }
+        clickOnIcon(Card5, CardColor5.getBackground());
 
-        Score.setText(Integer.toString(timesclicked - 1));
     }//GEN-LAST:event_Card5ActionPerformed
 
     private void Card6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Card6ActionPerformed
         // TODO add your handling code here:
-        Card6.setContentAreaFilled(false);
-        Card6.setBorderPainted(false);
-        Card6.setIcon(null);
-        if (timesclicked % 2 == 0) {
-            ColorClicked[1] = twodArray[1][1];
-            CardArray[1] = Card6;
-            timer.start();
-        } else {
-            ColorClicked[0] = twodArray[1][1];
-            CardArray[0] = Card6;
-            timesclicked++;
-        }
+        clickOnIcon(Card6, CardColor6.getBackground());
 
-        Score.setText(Integer.toString(timesclicked - 1));
     }//GEN-LAST:event_Card6ActionPerformed
 
     private void Card7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Card7ActionPerformed
         // TODO add your handling code here:
-        Card7.setContentAreaFilled(false);
-        Card7.setBorderPainted(false);
-        Card7.setIcon(null);
-        if (timesclicked % 2 == 0) {
-            ColorClicked[1] = twodArray[1][2];
-            CardArray[1] = Card7;
-            timer.start();
-        } else {
-            ColorClicked[0] = twodArray[1][2];
-            CardArray[0] = Card7;
-            timesclicked++;
-        }
+        clickOnIcon(Card7, CardColor7.getBackground());
 
-        Score.setText(Integer.toString(timesclicked - 1));
     }//GEN-LAST:event_Card7ActionPerformed
 
     private void Card8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Card8ActionPerformed
         // TODO add your handling code here:
-        Card8.setContentAreaFilled(false);
-        Card8.setBorderPainted(false);
-        Card8.setIcon(null);
-        if (timesclicked % 2 == 0) {
-            ColorClicked[1] = twodArray[1][3];
-            CardArray[1] = Card8;
-            timer.start();
-        } else {
-            ColorClicked[0] = twodArray[1][3];
-            CardArray[0] = Card8;
-            timesclicked++;
-        }
-        Score.setText(Integer.toString(timesclicked - 1));
+        clickOnIcon(Card8, CardColor8.getBackground());
+
     }//GEN-LAST:event_Card8ActionPerformed
 
     private void Card9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Card9ActionPerformed
-        // TODO add your handling code here:Button3.setContentAreaFilled(false);
-        Card9.setContentAreaFilled(false);
-        Card9.setBorderPainted(false);
-        Card9.setIcon(null);
-        if (timesclicked % 2 == 0) {
-            ColorClicked[1] = twodArray[2][0];
-            CardArray[1] = Card9;
-            timer.start();
-        } else {
-            ColorClicked[0] = twodArray[2][0];
-            CardArray[0] = Card9;
-            timesclicked++;
-        }
-        Score.setText(Integer.toString(timesclicked - 1));
+        // TODO add your handling code here:
+        clickOnIcon(Card9, CardColor9.getBackground());
+
     }//GEN-LAST:event_Card9ActionPerformed
 
     private void Card10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Card10ActionPerformed
         // TODO add your handling code here: 
-        Card10.setContentAreaFilled(false);
-        Card10.setBorderPainted(false);
-        Card10.setIcon(null);
-        if (timesclicked % 2 == 0) {
-            ColorClicked[1] = twodArray[2][1];
-            CardArray[1] = Card10;
-            timer.start();
-        } else {
-            ColorClicked[0] = twodArray[2][1];
-            CardArray[0] = Card10;
-            timesclicked++;
-        }
-        Score.setText(Integer.toString(timesclicked - 1));
+        clickOnIcon(Card10, CardColor10.getBackground());
+
     }//GEN-LAST:event_Card10ActionPerformed
 
     private void Card11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Card11ActionPerformed
         // TODO add your handling code here:
-        Card11.setContentAreaFilled(false);
-        Card11.setBorderPainted(false);
-        Card11.setIcon(null);
-        if (timesclicked % 2 == 0) {
-            ColorClicked[1] = twodArray[2][2];
-            CardArray[1] = Card11;
-            timer.start();
-        } else {
-            ColorClicked[0] = twodArray[2][2];
-            CardArray[0] = Card11;
-            timesclicked++;
-        }
-        Score.setText(Integer.toString(timesclicked - 1));
+        clickOnIcon(Card11, CardColor11.getBackground());
+
     }//GEN-LAST:event_Card11ActionPerformed
 
     private void Card12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Card12ActionPerformed
         // TODO add your handling code here:
-        Card12.setContentAreaFilled(false);
-        Card12.setBorderPainted(false);
-        Card12.setIcon(null);
-        if (timesclicked % 2 == 0) {
-            ColorClicked[1] = twodArray[2][3];
-            CardArray[1] = Card12;
-            timer.start();
-        } else {
-            ColorClicked[0] = twodArray[2][3];
-            CardArray[0] = Card12;
-            timesclicked++;
-        }
-        Score.setText(Integer.toString(timesclicked - 1));
+        clickOnIcon(Card12, CardColor12.getBackground());
+
     }//GEN-LAST:event_Card12ActionPerformed
 
     private void Card13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Card13ActionPerformed
         // TODO add your handling code here:
-        Card13.setContentAreaFilled(false);
-        Card13.setBorderPainted(false);
-        Card13.setIcon(null);
-        if (timesclicked % 2 == 0) {
-            ColorClicked[1] = twodArray[3][0];
-            CardArray[1] = Card13;
-            timer.start();
-        } else {
-            ColorClicked[0] = twodArray[3][0];
-            CardArray[0] = Card13;
-            timesclicked++;
-        }
-        Score.setText(Integer.toString(timesclicked - 1));
+        clickOnIcon(Card13, CardColor13.getBackground());
+
     }//GEN-LAST:event_Card13ActionPerformed
 
     private void Card14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Card14ActionPerformed
         // TODO add your handling code here:
-        Card14.setContentAreaFilled(false);
-        Card14.setBorderPainted(false);
-        Card14.setIcon(null);
-        if (timesclicked % 2 == 0) {
-            ColorClicked[1] = twodArray[3][1];
-            CardArray[1] = Card14;
-            timer.start();
-        } else {
-            ColorClicked[0] = twodArray[3][1];
-            CardArray[0] = Card14;
-            timesclicked++;
-        }
-        Score.setText(Integer.toString(timesclicked - 1));
+        clickOnIcon(Card14, CardColor14.getBackground());
+
     }//GEN-LAST:event_Card14ActionPerformed
 
     private void Card15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Card15ActionPerformed
         // TODO add your handling code here:
-        Card15.setContentAreaFilled(false);
-        Card15.setBorderPainted(false);
-        Card15.setIcon(null);
-        if (timesclicked % 2 == 0) {
-            ColorClicked[1] = twodArray[3][2];
-            CardArray[1] = Card15;
-            timer.start();
-        } else {
-            ColorClicked[0] = twodArray[3][2];
-            CardArray[0] = Card15;
-            timesclicked++;
-        }
-        Score.setText(Integer.toString(timesclicked - 1));
+        clickOnIcon(Card15, CardColor15.getBackground());
+
     }//GEN-LAST:event_Card15ActionPerformed
 
     private void Card2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Card2ActionPerformed
         // TODO add your handling code here:
-        Card2.setContentAreaFilled(false);
-        Card2.setBorderPainted(false);
-        Card2.setIcon(null);
-        if (timesclicked % 2 == 0) {
-            ColorClicked[1] = twodArray[0][1];
-            CardArray[1] = Card2;
-            timer.start();
-        } else {
-            ColorClicked[0] = twodArray[0][1];
-            CardArray[0] = Card2;
-            timesclicked++;
-        }
-        Score.setText(Integer.toString(timesclicked - 1));
+        clickOnIcon(Card2, CardColor2.getBackground());
     }//GEN-LAST:event_Card2ActionPerformed
 
     private void Card1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Card1ActionPerformed
         // TODO add your handling code here:
-        Card1.setContentAreaFilled(false);
-        Card1.setBorderPainted(false);
-        Card1.setIcon(null);
-        if (timesclicked % 2 == 0) {
-            ColorClicked[1] = twodArray[0][0];
-            CardArray[1] = Card1;
-            timer.start();
-        } else {
-            ColorClicked[0] = twodArray[0][0];
-            CardArray[0] = Card1;
-            timesclicked++;
-        }
-        Score.setText(Integer.toString(timesclicked - 1));
+        clickOnIcon(Card1, CardColor1.getBackground());
+
     }//GEN-LAST:event_Card1ActionPerformed
 
     private void Card16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Card16ActionPerformed
         // TODO add your handling code here:
-        Card16.setContentAreaFilled(false);
-        Card16.setBorderPainted(false);
-        Card16.setIcon(null);
-        if (timesclicked % 2 == 0) {
-            ColorClicked[1] = twodArray[3][3];
-            CardArray[1] = Card16;
-            timer.start();
-        } else {
-            ColorClicked[0] = twodArray[3][3];
-            CardArray[0] = Card16;
-            timesclicked++;
-        }
-        Score.setText(Integer.toString(timesclicked - 1));
+        clickOnIcon(Card16, CardColor16.getBackground());
+
     }//GEN-LAST:event_Card16ActionPerformed
 
     private void FinishActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FinishActionPerformed
@@ -1038,6 +859,7 @@ public class Main extends javax.swing.JFrame {
         CardColor14.setBackground(twodArray[3][1]);
         CardColor15.setBackground(twodArray[3][2]);
         CardColor16.setBackground(twodArray[3][3]);
+     
     }
 
     private void CheckIfSame() {
@@ -1059,7 +881,7 @@ public class Main extends javax.swing.JFrame {
             Arrays.fill(ColorClicked, null);
             timesclicked++;
         }
-        timer.stop();
+
     }
 
     //write to file to store the highscore from the current run
@@ -1109,6 +931,27 @@ public class Main extends javax.swing.JFrame {
 
         } catch (IOException ex) {
             System.out.println("icon niet gevonden");
+        }
+
+    }
+
+    private void clickOnIcon(javax.swing.JButton CardX, Color colorX) {
+        if (allowClick) {
+            CardX.setContentAreaFilled(false);
+            CardX.setBorderPainted(false);
+            CardX.setIcon(null);
+            if (timesclicked % 2 == 0) {
+                allowClick = (false);
+                ColorClicked[1] = colorX;
+                CardArray[1] = CardX;
+                timer.start();
+
+            } else {
+                ColorClicked[0] = colorX;
+                CardArray[0] = CardX;
+                timesclicked++;
+            }
+            Score.setText(Integer.toString(timesclicked - 1));
         }
     }
 }
